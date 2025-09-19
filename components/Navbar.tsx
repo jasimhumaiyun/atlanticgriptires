@@ -31,7 +31,7 @@ export default function Navbar() {
       isScrolled ? 'bg-black/98 backdrop-blur-xl shadow-2xl' : 'bg-black/95 backdrop-blur-lg'
     } border-b border-primary/20`}>
       <div className="container-custom">
-        <div className="flex items-center justify-center h-20">
+        <div className="flex items-center justify-between md:justify-center h-20">
           <div className="hidden md:flex items-center space-x-8">
             {['Home', 'About', 'Services', 'Why AG', 'Contact'].map((item, i) => (
               <motion.button
@@ -65,6 +65,10 @@ export default function Navbar() {
             <span className={`block w-7 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
             <span className={`block w-7 h-0.5 bg-white transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
           </button>
+
+          <div className="md:hidden text-white font-bold text-base">ATLANTIC GRIP TIRES</div>
+
+          <div className="md:hidden w-10"></div>
         </div>
       </div>
 

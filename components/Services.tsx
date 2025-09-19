@@ -70,7 +70,7 @@ export default function Services() {
             >
               <h2 className="text-4xl font-black md:text-5xl"><span className="text-[#DC2626]">Our</span> <span className="text-white">Services</span></h2>
 
-              <div className="grid gap-6 md:grid-cols-2">
+              <div className="hidden sm:grid gap-6 md:grid-cols-2">
                 {services.map((service, i) => (
                   <motion.div
                     key={service.title}
@@ -89,6 +89,18 @@ export default function Services() {
                   </motion.div>
                 ))}
               </div>
+
+              <div className="sm:hidden space-y-2">
+                {services.map((service) => (
+                  <div key={service.title} className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">•</span>
+                    <div>
+                      <span className="text-white font-medium text-sm">{service.title}</span>
+                      <span className="text-white/60 text-xs block">{service.description}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </motion.div>
 
             <motion.div
@@ -100,7 +112,7 @@ export default function Services() {
             >
               <h2 className="text-4xl font-black text-white md:text-5xl">Why Choose <span className="text-[#DC2626]">AG</span> <span className="text-white">Tires</span></h2>
 
-              <div className="space-y-5">
+              <div className="hidden sm:block space-y-5">
                 {advantages.map((item, index) => (
                   <motion.div
                     key={item.title}
@@ -117,6 +129,18 @@ export default function Services() {
                       </div>
                     </div>
                   </motion.div>
+                ))}
+              </div>
+
+              <div className="sm:hidden space-y-2">
+                {advantages.map((item) => (
+                  <div key={item.title} className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">•</span>
+                    <div>
+                      <span className="text-white font-medium text-sm">{item.title}</span>
+                      <span className="text-white/60 text-xs block">{item.detail}</span>
+                    </div>
+                  </div>
                 ))}
               </div>
             </motion.div>

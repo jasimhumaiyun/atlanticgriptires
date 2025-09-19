@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
@@ -15,6 +16,7 @@ export default function About() {
     triggerOnce: true,
     threshold: 0.1
   })
+  const [showMore, setShowMore] = useState(false)
 
   return (
     <section id="about" className="section-padding relative">
@@ -35,24 +37,57 @@ export default function About() {
                   <span className="text-[#DC2626]">About</span> <span className="text-white">Us</span>
                 </h2>
                 <div className="space-y-7 text-base leading-relaxed text-white/80 md:text-lg">
-                  <div>
+                  <div className="sm:hidden">
                     <p className="text-justify">
-                      AG Tires is a direct import and retail business based in Newfoundland and Labrador (NL), committed to becoming the province&apos;s leading customer-focused tire provider. Our mission is to offer high-quality tires at competitive prices, with a diverse selection suited to local conditions and exceptional service that caters to all socio-economic groups. By utilizing a direct import model, we streamline our supply chain to deliver greater value to both individual customers and commercial clients throughout NL.
+                      AG Tires is a direct import and retail business based in Newfoundland and Labrador (NL), committed to becoming the province&apos;s leading customer-focused tire provider.
+                      {showMore && (
+                        <span> Our mission is to offer high-quality tires at competitive prices, with a diverse selection suited to local conditions and exceptional service that caters to all socio-economic groups. By utilizing a direct import model, we streamline our supply chain to deliver greater value to both individual customers and commercial clients throughout NL.</span>
+                      )}
                     </p>
+                    {showMore && (
+                      <>
+                        <div>
+                          <h3 className="text-xl font-bold text-white mb-2 mt-4">Vision</h3>
+                          <p className="text-justify text-sm">
+                            To be the leading and most trusted provider of high-quality, competitively priced tires and comprehensive tire services in Newfoundland and Labrador.
+                          </p>
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-white mb-2 mt-4">Mission</h3>
+                          <p className="text-justify text-sm">
+                            Atlantic Grip Tires is dedicated to providing Newfoundland and Labrador residents with optimal tire solutions for their unique driving conditions.
+                          </p>
+                        </div>
+                      </>
+                    )}
+                    <button
+                      onClick={() => setShowMore(!showMore)}
+                      className="text-primary text-sm mt-3 font-medium"
+                    >
+                      {showMore ? 'Show Less' : 'Show More'}
+                    </button>
                   </div>
 
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-3">Vision</h3>
-                    <p className="text-justify">
-                      To be the leading and most trusted provider of high-quality, competitively priced tires and comprehensive tire services in Newfoundland and Labrador, recognized for our commitment to customer safety, value, and operational excellence.
-                    </p>
-                  </div>
+                  <div className="hidden sm:block">
+                    <div>
+                      <p className="text-justify">
+                        AG Tires is a direct import and retail business based in Newfoundland and Labrador (NL), committed to becoming the province&apos;s leading customer-focused tire provider. Our mission is to offer high-quality tires at competitive prices, with a diverse selection suited to local conditions and exceptional service that caters to all socio-economic groups. By utilizing a direct import model, we streamline our supply chain to deliver greater value to both individual customers and commercial clients throughout NL.
+                      </p>
+                    </div>
 
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-3">Mission</h3>
-                    <p className="text-justify">
-                      Atlantic Grip Tires is dedicated to providing Newfoundland and Labrador residents and businesses with the optimal tire solutions for their unique driving conditions. Through a streamlined direct import and distribution model, we will ensure access to a diverse range of high-performance tires, supported by expert advice and exceptional service, thereby enhancing safety, delivering superior value, and ensuring convenience.
-                    </p>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white mb-3">Vision</h3>
+                      <p className="text-justify">
+                        To be the leading and most trusted provider of high-quality, competitively priced tires and comprehensive tire services in Newfoundland and Labrador, recognized for our commitment to customer safety, value, and operational excellence.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-2xl font-bold text-white mb-3">Mission</h3>
+                      <p className="text-justify">
+                        Atlantic Grip Tires is dedicated to providing Newfoundland and Labrador residents and businesses with the optimal tire solutions for their unique driving conditions. Through a streamlined direct import and distribution model, we will ensure access to a diverse range of high-performance tires, supported by expert advice and exceptional service, thereby enhancing safety, delivering superior value, and ensuring convenience.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
