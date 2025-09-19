@@ -20,6 +20,9 @@ export default function Footer() {
           <p className="text-primary font-semibold uppercase tracking-[0.2em] text-sm">
             Newfoundland&apos;s Premier Tire Specialists
           </p>
+          <p className="text-white/30 text-xs mt-6">
+            Website designed by Jasim Humaiyun • jasim.humaiyun1@gmail.com
+          </p>
         </div>
       </div>
     </footer>
