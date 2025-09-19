@@ -62,8 +62,7 @@ export default function Contact() {
 
   const contactInfo = [
     { title: 'Location', content: '934 Topsail Road, Mount Pearl\nSt. John\'s, NL, Canada\nA1N 5L3' },
-    { title: 'Contact', content: 'Shynu Philip\nManaging Director\n+1 (709) 351-1126' },
-    { title: 'Email', content: 'atlanticgriptires@gmail.com' }
+    { title: 'Contact', content: 'Shynu Philip\nManaging Director\n+1 (709) 351-1126\natlanticgriptires@gmail.com' }
   ]
 
   return (
@@ -72,7 +71,14 @@ export default function Contact() {
         style={{ background: 'radial-gradient(circle at top left, rgba(220,38,38,0.32), transparent 55%)' }}
       />
       <div className="container-custom relative">
-        <div ref={ref} className="grid gap-12 lg:grid-cols-2">
+        <div ref={ref} className="grid gap-12 lg:grid-cols-2 relative">
+          <div className="hidden lg:block absolute inset-y-0 left-1/2 -translate-x-1/2" aria-hidden="true">
+            <div className="relative h-full w-1">
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#DC2626] to-transparent opacity-50"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#FF0000] via-50% to-transparent blur-sm"></div>
+              <div className="absolute left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-[#FF0000] via-50% to-transparent"></div>
+            </div>
+          </div>
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -94,7 +100,7 @@ export default function Contact() {
                   className="rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl"
                 >
                   <div>
-                    <h4 className="text-sm uppercase tracking-[0.25em] text-white/60">{item.title}</h4>
+                    <h4 className="text-sm uppercase tracking-[0.25em] text-[#DC2626] font-bold">{item.title}</h4>
                     <p className="mt-2 whitespace-pre-line text-sm text-white/70">{item.content}</p>
                   </div>
                 </motion.div>

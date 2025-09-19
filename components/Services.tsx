@@ -63,7 +63,13 @@ export default function Services() {
     <section id="services" className="section-padding bg-zinc-900/30 sm:bg-transparent">
       <div className="container-custom">
         <div ref={ref} className="relative">
-          <div className="hidden lg:block absolute inset-y-0 left-1/2 w-px bg-white/12" aria-hidden="true" />
+          <div className="hidden lg:block absolute inset-y-0 left-1/2 -translate-x-1/2" aria-hidden="true">
+            <div className="relative h-full w-1">
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#DC2626] to-transparent opacity-50"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#FF0000] via-50% to-transparent blur-sm"></div>
+              <div className="absolute left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-[#FF0000] via-50% to-transparent"></div>
+            </div>
+          </div>
 
           <div className="grid gap-16 lg:grid-cols-2 lg:items-start">
             <motion.div

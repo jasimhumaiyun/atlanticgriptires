@@ -45,12 +45,12 @@ export default function Navbar() {
             <span className="text-[#DC2626]">ATLANTIC GRIP</span> <span className="text-white">TIRES</span>
           </div>
 
-          <div className="hidden md:flex items-center space-x-10">
-            <div className="font-bebas text-3xl font-black uppercase italic" style={{ transform: 'skewX(-12deg)' }}>
+          <div className="hidden md:flex items-center space-x-10 absolute left-1/2 -translate-x-1/2">
+            <div className="font-bebas text-3xl font-black uppercase italic whitespace-nowrap" style={{ transform: 'skewX(-12deg)' }}>
               <span className="text-[#DC2626]">AG</span> <span className="text-white">TIRES</span>
             </div>
             <div className="h-8 w-px bg-white/20"></div>
-            {['Home', 'About', 'Services', 'Why AG', 'Contact'].map((item, i) => (
+            {['Home', 'Services', 'Contact', 'About'].map((item, i) => (
               <motion.button
                 key={item}
                 initial={{ opacity: 0, y: -20 }}
@@ -76,7 +76,7 @@ export default function Navbar() {
           className="md:hidden absolute top-20 left-0 w-full bg-black/98 backdrop-blur-xl border-t border-primary/20"
         >
           <div className="flex flex-col p-6 space-y-4">
-            {['Home', 'About', 'Services', 'Why AG', 'Contact'].map((item) => (
+            {['Home', 'Services', 'Contact', 'About'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
