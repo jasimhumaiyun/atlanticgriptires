@@ -36,21 +36,21 @@ export default function About() {
                 </h2>
                 <div className="space-y-7 text-base leading-relaxed text-white/80 md:text-lg">
                   <div>
-                    <p>
+                    <p className="text-justify">
                       AG Tires is a direct import and retail business based in Newfoundland and Labrador (NL), committed to becoming the province&apos;s leading customer-focused tire provider. Our mission is to offer high-quality tires at competitive prices, with a diverse selection suited to local conditions and exceptional service that caters to all socio-economic groups. By utilizing a direct import model, we streamline our supply chain to deliver greater value to both individual customers and commercial clients throughout NL.
                     </p>
                   </div>
 
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-3">Vision</h3>
-                    <p>
+                    <p className="text-justify">
                       To be the leading and most trusted provider of high-quality, competitively priced tires and comprehensive tire services in Newfoundland and Labrador, recognized for our commitment to customer safety, value, and operational excellence.
                     </p>
                   </div>
 
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-3">Mission</h3>
-                    <p>
+                    <p className="text-justify">
                       Atlantic Grip Tires is dedicated to providing Newfoundland and Labrador residents and businesses with the optimal tire solutions for their unique driving conditions. Through a streamlined direct import and distribution model, we will ensure access to a diverse range of high-performance tires, supported by expert advice and exceptional service, thereby enhancing safety, delivering superior value, and ensuring convenience.
                     </p>
                   </div>
