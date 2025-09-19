@@ -86,55 +86,57 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55, duration: 0.7 }}
-              className="mt-8 sm:mt-10 space-y-3 sm:space-y-4"
+              className="mt-8 sm:mt-10"
             >
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-0">What We Offer:</h3>
-              <div className="hidden sm:block space-y-3">
-                <div className="flex items-start gap-3">
-                  <span className="text-primary flex-shrink-0 text-lg">•</span>
-                  <div>
-                    <span className="text-white font-semibold">Full Tire Services</span>
-                    <span className="text-white/70 text-sm block">Sales • Installation • Rotation • Repair</span>
+              <div className="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-4">What We Offer:</h3>
+                <div className="hidden sm:block space-y-4">
+                  <div className="flex items-start gap-3">
+                    <span className="text-primary flex-shrink-0 text-lg mt-0.5">•</span>
+                    <div>
+                      <span className="text-white font-semibold">Full Tire Services</span>
+                      <span className="text-white/70 text-sm block mt-1">Sales • Installation • Rotation • Repair</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-primary flex-shrink-0 text-lg mt-0.5">•</span>
+                    <div>
+                      <span className="text-white font-semibold">Fast Installation</span>
+                      <span className="text-white/70 text-sm block mt-1">Professional mounting in 60 minutes</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-primary flex-shrink-0 text-lg mt-0.5">•</span>
+                    <div>
+                      <span className="text-white font-semibold">Direct Import Pricing</span>
+                      <span className="text-white/70 text-sm block mt-1">Best prices through direct sourcing</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-primary flex-shrink-0 text-lg mt-0.5">•</span>
+                    <div>
+                      <span className="text-white font-semibold">Free Inspection</span>
+                      <span className="text-white/70 text-sm block mt-1">Complimentary tire check & air pressure</span>
+                    </div>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-primary flex-shrink-0 text-lg">•</span>
-                  <div>
-                    <span className="text-white font-semibold">Fast Installation</span>
-                    <span className="text-white/70 text-sm block">Professional mounting in 60 minutes</span>
+                <div className="sm:hidden space-y-3">
+                  <div className="flex items-start gap-2">
+                    <span className="text-primary flex-shrink-0 mt-0.5">•</span>
+                    <span className="text-sm text-white/80">Full Tire Services - Sales, Installation, Repair</span>
                   </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-primary flex-shrink-0 text-lg">•</span>
-                  <div>
-                    <span className="text-white font-semibold">Direct Import Pricing</span>
-                    <span className="text-white/70 text-sm block">Best prices through direct sourcing</span>
+                  <div className="flex items-start gap-2">
+                    <span className="text-primary flex-shrink-0 mt-0.5">•</span>
+                    <span className="text-sm text-white/80">60-Minute Professional Installation</span>
                   </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-primary flex-shrink-0 text-lg">•</span>
-                  <div>
-                    <span className="text-white font-semibold">Free Inspection</span>
-                    <span className="text-white/70 text-sm block">Complimentary tire check & air pressure</span>
+                  <div className="flex items-start gap-2">
+                    <span className="text-primary flex-shrink-0 mt-0.5">•</span>
+                    <span className="text-sm text-white/80">Direct Import Pricing - Best Value</span>
                   </div>
-                </div>
-              </div>
-              <div className="sm:hidden space-y-2">
-                <div className="flex gap-2">
-                  <span className="text-primary flex-shrink-0">•</span>
-                  <span className="text-sm text-white/80">Full Tire Services - Sales, Installation, Repair</span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="text-primary flex-shrink-0">•</span>
-                  <span className="text-sm text-white/80">60-Minute Professional Installation</span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="text-primary flex-shrink-0">•</span>
-                  <span className="text-sm text-white/80">Direct Import Pricing - Best Value</span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="text-primary flex-shrink-0">•</span>
-                  <span className="text-sm text-white/80">Free Inspection & Air Check</span>
+                  <div className="flex items-start gap-2">
+                    <span className="text-primary flex-shrink-0 mt-0.5">•</span>
+                    <span className="text-sm text-white/80">Free Inspection & Air Check</span>
+                  </div>
                 </div>
               </div>
             </motion.div>

@@ -53,7 +53,9 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
-                className="text-white font-medium hover:text-primary transition-colors relative group cursor-pointer"
+                className={`font-medium transition-colors relative group cursor-pointer ${
+                  item === 'Home' ? 'text-primary hover:text-red-400' : 'text-white hover:text-primary'
+                }`}
               >
                 {item}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
@@ -74,7 +76,9 @@ export default function Navbar() {
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
-                className="text-white text-left py-2 hover:text-primary transition-colors"
+                className={`text-left py-2 transition-colors ${
+                  item === 'Home' ? 'text-primary hover:text-red-400' : 'text-white hover:text-primary'
+                }`}
               >
                 {item}
               </button>

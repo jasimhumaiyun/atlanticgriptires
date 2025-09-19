@@ -27,6 +27,10 @@ const services = [
   {
     title: 'Free Inspection',
     description: 'Complimentary tire health check'
+  },
+  {
+    title: 'Free Tire Rotation',
+    description: 'Complimentary rotation after 6 months of purchase'
   }
 ]
 
