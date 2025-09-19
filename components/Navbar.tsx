@@ -59,15 +59,6 @@ export default function Navbar() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
               </motion.button>
             ))}
-            <motion.button
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5 }}
-              onClick={() => scrollToSection('contact')}
-              className="bg-gradient-red text-white px-6 py-3 rounded-full font-semibold hover:-translate-y-0.5 transition-transform shadow-[0_4px_15px_rgba(220,38,38,0.3)] hover:shadow-[0_6px_20px_rgba(220,38,38,0.4)] cursor-pointer"
-            >
-              Book Appointment
-            </motion.button>
           </div>
         </div>
       </div>
@@ -88,12 +79,6 @@ export default function Navbar() {
                 {item}
               </button>
             ))}
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="bg-gradient-red text-white py-3 rounded-full font-semibold mt-4"
-            >
-              Book Appointment
-            </button>
           </div>
         </motion.div>
       )}

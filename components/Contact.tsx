@@ -61,8 +61,8 @@ export default function Contact() {
   }
 
   const contactInfo = [
-    { title: 'Location', content: 'St. John\'s, Newfoundland & Labrador' },
-    { title: 'Phone', content: '+1 (709) 351-1126' },
+    { title: 'Location', content: '934 Topsail Road, Mount Pearl\nSt. John\'s, NL, Canada\nA1N 5L3' },
+    { title: 'Contact', content: 'Shynu Philip\nManaging Director\n+1 (709) 351-1126' },
     { title: 'Email', content: 'atlanticgriptires@gmail.com' }
   ]
 

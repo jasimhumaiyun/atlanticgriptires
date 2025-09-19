@@ -61,14 +61,6 @@ export default function Hero() {
             >
               ATLANTIC GRIP <span className="text-gradient">TIRES</span>
             </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.7 }}
-              className="mt-2 sm:mt-6 text-sm sm:text-base text-white/80 md:text-lg italic"
-            >
-              Expert tire solutions for Newfoundland & Labrador drivers since 2024.
-            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -97,22 +89,34 @@ export default function Hero() {
               className="mt-8 sm:mt-10 space-y-3 sm:space-y-4"
             >
               <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-0">What We Offer:</h3>
-              <div className="hidden sm:grid gap-4 sm:grid-cols-2">
-                <div className="rounded-xl border border-white/12 bg-[#11131b] p-4 sm:p-5">
-                  <p className="text-base sm:text-lg font-semibold text-white">Full Tire Services</p>
-                  <p className="mt-2 text-sm text-white/70">Sales • Installation • Rotation • Repair</p>
+              <div className="hidden sm:block space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-primary flex-shrink-0 text-lg">•</span>
+                  <div>
+                    <span className="text-white font-semibold">Full Tire Services</span>
+                    <span className="text-white/70 text-sm block">Sales • Installation • Rotation • Repair</span>
+                  </div>
                 </div>
-                <div className="rounded-xl border border-white/12 bg-[#11131b] p-4 sm:p-5">
-                  <p className="text-base sm:text-lg font-semibold text-white">Fast Installation</p>
-                  <p className="mt-2 text-sm text-white/70">Professional mounting in 60 minutes</p>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary flex-shrink-0 text-lg">•</span>
+                  <div>
+                    <span className="text-white font-semibold">Fast Installation</span>
+                    <span className="text-white/70 text-sm block">Professional mounting in 60 minutes</span>
+                  </div>
                 </div>
-                <div className="rounded-xl border border-white/12 bg-[#11131b] p-4 sm:p-5">
-                  <p className="text-base sm:text-lg font-semibold text-white">Direct Import Pricing</p>
-                  <p className="mt-2 text-sm text-white/70">Best prices through direct sourcing</p>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary flex-shrink-0 text-lg">•</span>
+                  <div>
+                    <span className="text-white font-semibold">Direct Import Pricing</span>
+                    <span className="text-white/70 text-sm block">Best prices through direct sourcing</span>
+                  </div>
                 </div>
-                <div className="rounded-xl border border-white/12 bg-[#11131b] p-4 sm:p-5">
-                  <p className="text-base sm:text-lg font-semibold text-white">Free Inspection</p>
-                  <p className="mt-2 text-sm text-white/70">Complimentary tire check & air pressure</p>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary flex-shrink-0 text-lg">•</span>
+                  <div>
+                    <span className="text-white font-semibold">Free Inspection</span>
+                    <span className="text-white/70 text-sm block">Complimentary tire check & air pressure</span>
+                  </div>
                 </div>
               </div>
               <div className="sm:hidden space-y-2">
