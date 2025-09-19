@@ -17,7 +17,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate flex min-h-screen items-center overflow-hidden bg-black py-12 md:py-28 lg:py-32 hero-glow"
+      className="relative isolate flex min-h-screen items-center overflow-hidden py-12 md:py-28 lg:py-32 hero-tread"
     >
 
       <div className="container-custom relative z-10">
@@ -34,13 +34,17 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.7 }}
             className="flex lg:hidden items-center justify-center order-1"
+            style={{
+              transform: 'perspective(800px) rotateY(-5deg)',
+              transformStyle: 'preserve-3d'
+            }}
           >
             <Image
               src="/logo.png"
               alt="Atlantic Grip Tires"
               width={200}
               height={200}
-              className="w-32 h-auto"
+              className="w-32 h-auto logo-3d-pulse"
               priority
             />
           </motion.div>
@@ -55,7 +59,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.6 }}
-              className="hidden sm:inline-flex badge-chip bg-white/10 text-[0.7rem] text-white/80 mb-6"
+              className="hidden sm:inline-flex badge-chip text-[0.7rem] text-white/80 mb-6 relative z-20"
             >
               Direct Import • Premium Quality • Unbeatable Prices
             </motion.span>
@@ -204,15 +208,25 @@ export default function Hero() {
                     <h4 className="text-lg sm:text-xl font-bold text-white mb-2">Contact</h4>
                     <p className="text-white font-semibold">Shynu Philip</p>
                     <p className="text-white/60 text-sm">Managing Director</p>
-                    <p className="text-white/80 text-sm mt-1">+1 (709) 351-1126</p>
+                    <div className="flex items-center gap-2 mt-1">
+                      <svg className="w-4 h-4 text-blue-400" style={{ filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.8))' }} fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                      </svg>
+                      <p className="text-white/80 text-sm">+1 (709) 351-1126</p>
+                    </div>
                   </div>
                   <div>
                     <h4 className="text-lg sm:text-xl font-bold text-white mb-2">Location</h4>
-                    <p className="text-white/80 text-sm leading-relaxed">
-                      934 Topsail Road, Mount Pearl<br />
-                      St. John&apos;s, NL, Canada<br />
-                      A1N 5L3
-                    </p>
+                    <div className="flex items-start gap-2">
+                      <svg className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" style={{ filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.8))' }} fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                      </svg>
+                      <p className="text-white/80 text-sm leading-relaxed">
+                        934 Topsail Road, Mount Pearl<br />
+                        St. John&apos;s, NL, Canada<br />
+                        A1N 5L3
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -224,16 +238,27 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.7 }}
             className="relative hidden lg:flex items-center justify-center mt-6 sm:mt-8 lg:mt-0 order-3 lg:order-2"
-            style={{ transform: 'scale(1.5)' }}
+            style={{
+              transform: 'scale(1.5) perspective(1000px) rotateY(-5deg)',
+              transformStyle: 'preserve-3d'
+            }}
           >
-            <Image
-              src="/logo.png"
-              alt="Atlantic Grip Tires"
-              width={1200}
-              height={1200}
-              className="w-48 sm:w-64 lg:w-full max-w-[400px] lg:max-w-none h-auto"
-              priority
-            />
+            <div className="relative">
+              <Image
+                src="/logo.png"
+                alt="Atlantic Grip Tires"
+                width={1200}
+                height={1200}
+                className="w-48 sm:w-64 lg:w-full max-w-[400px] lg:max-w-none h-auto relative z-10 logo-3d-pulse"
+                priority
+              />
+              <div
+                className="absolute inset-0 bg-gradient-to-b from-transparent to-red-600/20 blur-3xl -z-10"
+                style={{
+                  transform: 'translateZ(-50px) scale(0.9)',
+                }}
+              />
+            </div>
           </motion.div>
         </div>
       </div>
