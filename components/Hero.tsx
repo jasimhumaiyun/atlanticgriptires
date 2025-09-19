@@ -116,20 +116,20 @@ export default function Hero() {
                 </div>
               </div>
               <div className="sm:hidden space-y-2">
-                <div className="flex items-start gap-2">
-                  <span className="text-primary">•</span>
+                <div className="flex gap-2">
+                  <span className="text-primary flex-shrink-0">•</span>
                   <span className="text-sm text-white/80">Full Tire Services - Sales, Installation, Repair</span>
                 </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-primary">•</span>
+                <div className="flex gap-2">
+                  <span className="text-primary flex-shrink-0">•</span>
                   <span className="text-sm text-white/80">60-Minute Professional Installation</span>
                 </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-primary">•</span>
+                <div className="flex gap-2">
+                  <span className="text-primary flex-shrink-0">•</span>
                   <span className="text-sm text-white/80">Direct Import Pricing - Best Value</span>
                 </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-primary">•</span>
+                <div className="flex gap-2">
+                  <span className="text-primary flex-shrink-0">•</span>
                   <span className="text-sm text-white/80">Free Inspection & Air Check</span>
                 </div>
               </div>

@@ -31,7 +31,20 @@ export default function Navbar() {
       isScrolled ? 'bg-black/98 backdrop-blur-xl shadow-2xl' : 'bg-black/95 backdrop-blur-lg'
     } border-b border-primary/20`}>
       <div className="container-custom">
-        <div className="flex items-center justify-between md:justify-center h-20">
+        <div className="flex items-center justify-center h-20 relative">
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden flex flex-col space-y-1.5 z-50 absolute left-0"
+          >
+            <span className={`block w-7 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+            <span className={`block w-7 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
+            <span className={`block w-7 h-0.5 bg-white transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+          </button>
+
+          <div className="md:hidden font-bebas text-2xl font-black uppercase tracking-wide">
+            ATLANTIC GRIP <span className="text-[#DC2626]">TIRES</span>
+          </div>
+
           <div className="hidden md:flex items-center space-x-8">
             {['Home', 'About', 'Services', 'Why AG', 'Contact'].map((item, i) => (
               <motion.button
@@ -56,21 +69,6 @@ export default function Navbar() {
               Book Appointment
             </motion.button>
           </div>
-
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden flex flex-col space-y-1.5 z-50"
-          >
-            <span className={`block w-7 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-            <span className={`block w-7 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
-            <span className={`block w-7 h-0.5 bg-white transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-          </button>
-
-          <div className="md:hidden font-bebas text-xl uppercase">
-            ATLANTIC GRIP <span className="text-[#DC2626]">TIRES</span>
-          </div>
-
-          <div className="md:hidden w-10"></div>
         </div>
       </div>
 

@@ -38,34 +38,37 @@ export default function About() {
                 </h2>
                 <div className="space-y-7 text-base leading-relaxed text-white/80 md:text-lg">
                   <div className="sm:hidden">
-                    <p className="text-justify">
-                      AG Tires is a direct import and retail business based in Newfoundland and Labrador (NL), committed to becoming the province&apos;s leading customer-focused tire provider.
-                      {showMore && (
-                        <span> Our mission is to offer high-quality tires at competitive prices, with a diverse selection suited to local conditions and exceptional service that caters to all socio-economic groups. By utilizing a direct import model, we streamline our supply chain to deliver greater value to both individual customers and commercial clients throughout NL.</span>
-                      )}
-                    </p>
+                    <div>
+                      <p className="text-justify">
+                        AG Tires is a direct import and retail business based in Newfoundland and Labrador (NL), committed to becoming the province&apos;s leading customer-focused tire provider.
+                        {showMore && (
+                          <span> Our mission is to offer high-quality tires at competitive prices, with a diverse selection suited to local conditions and exceptional service that caters to all socio-economic groups. By utilizing a direct import model, we streamline our supply chain to deliver greater value to both individual customers and commercial clients throughout NL.</span>
+                        )}
+                      </p>
+                      <button
+                        onClick={() => setShowMore(!showMore)}
+                        className="text-primary text-sm mt-2 font-medium"
+                      >
+                        {showMore ? 'Show Less' : 'Show More'}
+                      </button>
+                    </div>
+
                     {showMore && (
                       <>
-                        <div>
-                          <h3 className="text-xl font-bold text-white mb-2 mt-4">Vision</h3>
+                        <div className="mt-4">
+                          <h3 className="text-xl font-bold text-white mb-2">Vision</h3>
                           <p className="text-justify text-sm">
                             To be the leading and most trusted provider of high-quality, competitively priced tires and comprehensive tire services in Newfoundland and Labrador.
                           </p>
                         </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-white mb-2 mt-4">Mission</h3>
+                        <div className="mt-4">
+                          <h3 className="text-xl font-bold text-white mb-2">Mission</h3>
                           <p className="text-justify text-sm">
                             Atlantic Grip Tires is dedicated to providing Newfoundland and Labrador residents with optimal tire solutions for their unique driving conditions.
                           </p>
                         </div>
                       </>
                     )}
-                    <button
-                      onClick={() => setShowMore(!showMore)}
-                      className="text-primary text-sm mt-3 font-medium"
-                    >
-                      {showMore ? 'Show Less' : 'Show More'}
-                    </button>
                   </div>
 
                   <div className="hidden sm:block">
