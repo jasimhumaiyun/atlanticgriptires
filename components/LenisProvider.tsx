@@ -14,8 +14,7 @@ export function LenisProvider({ children }: { children: ReactNode }) {
     const lenis = new Lenis({
       lerp: 0.08,
       duration: 1.2,
-      smoothWheel: true,
-      smoothTouch: false
+      smoothWheel: true
     })
 
     const raf = (time: number) => {
