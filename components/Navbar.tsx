@@ -66,7 +66,9 @@ export default function Navbar() {
             <span className={`block w-7 h-0.5 bg-white transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
           </button>
 
-          <div className="md:hidden text-white font-bold text-base">ATLANTIC GRIP TIRES</div>
+          <div className="md:hidden font-bebas text-xl uppercase">
+            ATLANTIC GRIP <span className="text-[#DC2626]">TIRES</span>
+          </div>
 
           <div className="md:hidden w-10"></div>
         </div>

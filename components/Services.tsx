@@ -56,7 +56,7 @@ export default function Services() {
   })
 
   return (
-    <section id="services" className="section-padding">
+    <section id="services" className="section-padding bg-zinc-900/30 sm:bg-transparent">
       <div className="container-custom">
         <div ref={ref} className="relative">
           <div className="hidden lg:block absolute inset-y-0 left-1/2 w-px bg-white/12" aria-hidden="true" />

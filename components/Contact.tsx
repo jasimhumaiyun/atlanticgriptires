@@ -154,7 +154,7 @@ export default function Contact() {
                   type="date"
                   name="date"
                   placeholder="Preferred Date"
-                  className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder-white/50 transition focus:border-primary focus:outline-none"
+                  className="w-full rounded-xl border border-white/15 bg-white/10 px-3 sm:px-4 py-3 text-sm sm:text-base text-white placeholder-white/50 transition focus:border-primary focus:outline-none"
                 />
                 <textarea
                   name="notes"

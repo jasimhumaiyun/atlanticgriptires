@@ -48,7 +48,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.6 }}
-              className="badge-chip bg-white/10 text-[0.6rem] sm:text-[0.7rem] text-white/80 mb-4 sm:mb-6"
+              className="hidden sm:inline-flex badge-chip bg-white/10 text-[0.7rem] text-white/80 mb-6"
             >
               Direct Import • Premium Quality • Unbeatable Prices
             </motion.span>
@@ -56,16 +56,16 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.7 }}
-              className="font-bebas text-3xl leading-none text-white sm:text-4xl md:text-5xl lg:text-5xl font-black uppercase"
+              className="hidden sm:block font-bebas text-3xl leading-none text-white sm:text-4xl md:text-5xl lg:text-5xl font-black uppercase"
               style={{ fontWeight: 900, letterSpacing: '0.02em' }}
             >
-              ATLANTIC GRIP<br className="sm:hidden" /> <span className="text-gradient">TIRES</span>
+              ATLANTIC GRIP <span className="text-gradient">TIRES</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.7 }}
-              className="mt-4 sm:mt-6 text-sm sm:text-base text-white/80 md:text-lg italic"
+              className="mt-2 sm:mt-6 text-sm sm:text-base text-white/80 md:text-lg italic"
             >
               Expert tire solutions for Newfoundland & Labrador drivers since 2024.
             </motion.p>
@@ -96,7 +96,7 @@ export default function Hero() {
               transition={{ delay: 0.55, duration: 0.7 }}
               className="mt-8 sm:mt-10 space-y-3 sm:space-y-4"
             >
-              <h3 className="text-lg sm:text-xl font-bold text-white">What We Offer:</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-0">What We Offer:</h3>
               <div className="hidden sm:grid gap-4 sm:grid-cols-2">
                 <div className="rounded-xl border border-white/12 bg-[#11131b] p-4 sm:p-5">
                   <p className="text-base sm:text-lg font-semibold text-white">Full Tire Services</p>
@@ -117,19 +117,19 @@ export default function Hero() {
               </div>
               <div className="sm:hidden space-y-2">
                 <div className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
+                  <span className="text-primary">•</span>
                   <span className="text-sm text-white/80">Full Tire Services - Sales, Installation, Repair</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
+                  <span className="text-primary">•</span>
                   <span className="text-sm text-white/80">60-Minute Professional Installation</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
+                  <span className="text-primary">•</span>
                   <span className="text-sm text-white/80">Direct Import Pricing - Best Value</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
+                  <span className="text-primary">•</span>
                   <span className="text-sm text-white/80">Free Inspection & Air Check</span>
                 </div>
               </div>
