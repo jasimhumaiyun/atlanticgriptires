@@ -203,7 +203,7 @@ export default function Hero() {
                     <h4 className="text-lg sm:text-xl font-bold text-white mb-2">Location</h4>
                     <p className="text-white/80 text-sm leading-relaxed">
                       934 Topsail Road, Mount Pearl<br />
-                      St. John's, NL, Canada<br />
+                      St. John&apos;s, NL, Canada<br />
                       A1N 5L3
                     </p>
                   </div>
