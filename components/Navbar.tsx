@@ -42,10 +42,14 @@ export default function Navbar() {
           </button>
 
           <div className="md:hidden font-bebas text-2xl font-black uppercase tracking-wide">
-            ATLANTIC GRIP <span className="text-[#DC2626]">TIRES</span>
+            <span className="text-[#DC2626]">ATLANTIC GRIP</span> <span className="text-white">TIRES</span>
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-10">
+            <div className="font-bebas text-3xl font-black uppercase italic" style={{ transform: 'skewX(-12deg)' }}>
+              <span className="text-[#DC2626]">AG</span> <span className="text-white">TIRES</span>
+            </div>
+            <div className="h-8 w-px bg-white/20"></div>
             {['Home', 'About', 'Services', 'Why AG', 'Contact'].map((item, i) => (
               <motion.button
                 key={item}
@@ -53,8 +57,8 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
-                className={`font-medium transition-colors relative group cursor-pointer ${
-                  item === 'Home' ? 'text-primary hover:text-red-400' : 'text-white hover:text-primary'
+                className={`font-bold text-lg transition-colors relative group cursor-pointer ${
+                  item === 'Home' ? 'text-[#DC2626] hover:text-red-400' : 'text-white hover:text-primary'
                 }`}
               >
                 {item}
@@ -77,7 +81,7 @@ export default function Navbar() {
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
                 className={`text-left py-2 transition-colors ${
-                  item === 'Home' ? 'text-primary hover:text-red-400' : 'text-white hover:text-primary'
+                  item === 'Home' ? 'text-[#DC2626] hover:text-red-400' : 'text-white hover:text-primary'
                 }`}
               >
                 {item}

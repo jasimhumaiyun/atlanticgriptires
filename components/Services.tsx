@@ -74,36 +74,28 @@ export default function Services() {
             >
               <h2 className="text-4xl font-black md:text-5xl"><span className="text-[#DC2626]">Our</span> <span className="text-white">Services</span></h2>
 
-              <div className="hidden sm:grid gap-6 md:grid-cols-2">
-                {services.map((service, i) => (
-                  <motion.div
-                    key={service.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ delay: i * 0.05, duration: 0.45 }}
-                    className="relative overflow-hidden rounded-2xl border border-white/12 bg-[#11131b] p-6 text-left transition-transform duration-300 hover:-translate-y-1 hover:border-primary/60"
-                  >
-                    <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" aria-hidden="true" />
-                    <div className="relative z-10 space-y-3">
+              <div className="rounded-2xl border border-white/15 bg-black/50 backdrop-blur-xl p-6">
+                <div className="space-y-4">
+                  {services.map((service, i) => (
+                    <motion.div
+                      key={service.title}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={inView ? { opacity: 1, x: 0 } : {}}
+                      transition={{ delay: i * 0.05, duration: 0.45 }}
+                      className="flex items-start gap-3"
+                    >
+                      <svg className="w-4 h-4 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
+                        <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                        <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
+                      </svg>
                       <div>
-                        <h3 className="font-bebas text-2xl leading-tight tracking-[0.08em] text-primary drop-shadow-[0_0_6px_rgba(220,38,38,0.25)]">{service.title}</h3>
-                        <p className="mt-3 text-sm text-white/80">{service.description}</p>
+                        <h3 className="text-white font-semibold">{service.title}</h3>
+                        <p className="text-white/60 text-sm mt-0.5">{service.description}</p>
                       </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="sm:hidden space-y-2">
-                {services.map((service) => (
-                  <div key={service.title} className="flex items-start gap-2">
-                    <span className="text-primary mt-0.5">•</span>
-                    <div>
-                      <span className="text-white font-medium text-sm">{service.title}</span>
-                      <span className="text-white/60 text-xs block">{service.description}</span>
-                    </div>
-                  </div>
-                ))}
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </motion.div>
 
@@ -114,38 +106,30 @@ export default function Services() {
               transition={{ delay: 0.2, duration: 0.7 }}
               className="space-y-8 lg:pl-14"
             >
-              <h2 className="text-4xl font-black text-white md:text-5xl">Why Choose <span className="text-[#DC2626]">AG</span> <span className="text-white">Tires</span></h2>
+              <h2 className="text-4xl font-black md:text-5xl"><span className="text-[#DC2626]">Why</span> <span className="text-white">Choose AG Tires</span></h2>
 
-              <div className="hidden sm:block space-y-5">
-                {advantages.map((item, index) => (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ delay: 0.25 + index * 0.06, duration: 0.45 }}
-                    className="relative overflow-hidden rounded-2xl border border-white/12 bg-[#11131b] p-6 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/60"
-                  >
-                    <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" aria-hidden="true" />
-                    <div className="relative z-10 space-y-3">
+              <div className="rounded-2xl border border-white/15 bg-black/50 backdrop-blur-xl p-6">
+                <div className="space-y-4">
+                  {advantages.map((item, index) => (
+                    <motion.div
+                      key={item.title}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={inView ? { opacity: 1, x: 0 } : {}}
+                      transition={{ delay: 0.25 + index * 0.06, duration: 0.45 }}
+                      className="flex items-start gap-3"
+                    >
+                      <svg className="w-4 h-4 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
+                        <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                        <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
+                      </svg>
                       <div>
-                        <h3 className="font-bebas text-2xl leading-tight tracking-[0.08em] text-primary drop-shadow-[0_0_6px_rgba(220,38,38,0.25)]">{item.title}</h3>
-                        <p className="mt-3 text-sm text-white/80">{item.detail}</p>
+                        <h3 className="text-white font-semibold">{item.title}</h3>
+                        <p className="text-white/60 text-sm mt-0.5">{item.detail}</p>
                       </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="sm:hidden space-y-2">
-                {advantages.map((item) => (
-                  <div key={item.title} className="flex items-start gap-2">
-                    <span className="text-primary mt-0.5">•</span>
-                    <div>
-                      <span className="text-white font-medium text-sm">{item.title}</span>
-                      <span className="text-white/60 text-xs block">{item.detail}</span>
-                    </div>
-                  </div>
-                ))}
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           </div>

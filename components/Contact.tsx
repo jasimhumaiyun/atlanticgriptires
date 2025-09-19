@@ -79,7 +79,7 @@ export default function Contact() {
             transition={{ duration: 0.7 }}
             className="space-y-8"
           >
-            <h2 className="text-4xl font-black text-white md:text-5xl">Get in <span className="text-[#DC2626]">Touch</span></h2>
+            <h2 className="text-4xl font-black md:text-5xl"><span className="text-[#DC2626]">Get</span> <span className="text-white">in Touch</span></h2>
             <p className="text-white/70 text-lg max-w-xl">
               Visit us today or book your appointment online. We&apos;re here to keep you rolling!
             </p>

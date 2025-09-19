@@ -59,7 +59,7 @@ export default function Hero() {
               className="hidden sm:block font-bebas text-3xl leading-none text-white sm:text-4xl md:text-5xl lg:text-5xl font-black uppercase"
               style={{ fontWeight: 900, letterSpacing: '0.02em' }}
             >
-              ATLANTIC GRIP <span className="text-gradient">TIRES</span>
+              <span className="text-[#DC2626] animate-glow-pulse" style={{ textShadow: '0 0 50px rgba(220,38,38,1), 0 0 80px rgba(220,38,38,0.8)' }}>ATLANTIC GRIP</span> <span className="text-white animate-glow-pulse" style={{ textShadow: '0 0 50px rgba(255,255,255,1), 0 0 80px rgba(255,255,255,0.8)' }}>TIRES</span>
             </motion.h1>
 
             <motion.div
@@ -70,13 +70,13 @@ export default function Hero() {
             >
               <button
                 onClick={() => scrollToSection('contact')}
-                className="bg-gradient-red text-white transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_30px_120px_rgba(220,38,38,0.35)] rounded-full px-4 py-2.5 sm:px-8 sm:py-4 text-xs sm:text-lg font-semibold cursor-pointer text-center flex-1 sm:flex-none"
+                className="bg-gradient-red text-white transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_30px_120px_rgba(220,38,38,0.35)] rounded-full px-4 py-2 sm:px-7 sm:py-2.5 text-xs sm:text-base font-semibold cursor-pointer text-center flex-1 sm:flex-none"
               >
                 Book Appointment
               </button>
               <button
                 onClick={() => scrollToSection('services')}
-                className="rounded-full border border-white/20 px-4 py-2.5 sm:px-8 sm:py-4 text-xs sm:text-lg font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary/10 cursor-pointer text-center flex-1 sm:flex-none"
+                className="rounded-full border border-white/20 px-4 py-2 sm:px-7 sm:py-2.5 text-xs sm:text-base font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary/10 cursor-pointer text-center flex-1 sm:flex-none"
               >
                 View Services
               </button>
@@ -86,56 +86,126 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55, duration: 0.7 }}
-              className="mt-8 sm:mt-10"
+              className="mt-8 sm:mt-10 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-4"
             >
-              <div className="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl p-6">
+              <div className="rounded-2xl border border-white/15 bg-black/50 backdrop-blur-xl p-5 sm:p-6">
                 <h3 className="text-lg sm:text-xl font-bold text-white mb-4">What We Offer:</h3>
-                <div className="hidden sm:block space-y-4">
+                <div className="hidden sm:block space-y-3">
                   <div className="flex items-start gap-3">
-                    <span className="text-primary flex-shrink-0 text-lg mt-0.5">•</span>
+                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
+                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
                     <div>
-                      <span className="text-white font-semibold">Full Tire Services</span>
-                      <span className="text-white/70 text-sm block mt-1">Sales • Installation • Rotation • Repair</span>
+                      <span className="text-white font-semibold text-sm">Full Tire Services</span>
+                      <span className="text-white/60 text-xs block mt-0.5">Sales • Installation • Rotation • Repair</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="text-primary flex-shrink-0 text-lg mt-0.5">•</span>
+                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
+                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
                     <div>
-                      <span className="text-white font-semibold">Fast Installation</span>
-                      <span className="text-white/70 text-sm block mt-1">Professional mounting in 60 minutes</span>
+                      <span className="text-white font-semibold text-sm">Fast Installation</span>
+                      <span className="text-white/60 text-xs block mt-0.5">Professional mounting in 60 minutes</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="text-primary flex-shrink-0 text-lg mt-0.5">•</span>
+                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
+                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
                     <div>
-                      <span className="text-white font-semibold">Direct Import Pricing</span>
-                      <span className="text-white/70 text-sm block mt-1">Best prices through direct sourcing</span>
+                      <span className="text-white font-semibold text-sm">Direct Import Pricing</span>
+                      <span className="text-white/60 text-xs block mt-0.5">Best prices through direct sourcing</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="text-primary flex-shrink-0 text-lg mt-0.5">•</span>
+                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
+                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
                     <div>
-                      <span className="text-white font-semibold">Free Inspection</span>
-                      <span className="text-white/70 text-sm block mt-1">Complimentary tire check & air pressure</span>
+                      <span className="text-white font-semibold text-sm">Free Inspection</span>
+                      <span className="text-white/60 text-xs block mt-0.5">Complimentary tire check & air pressure</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
+                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
+                    <div>
+                      <span className="text-white font-semibold text-sm">Free Tire Rotation</span>
+                      <span className="text-white/60 text-xs block mt-0.5">Complimentary rotation after 6 months of purchase</span>
                     </div>
                   </div>
                 </div>
                 <div className="sm:hidden space-y-3">
                   <div className="flex items-start gap-2">
-                    <span className="text-primary flex-shrink-0 mt-0.5">•</span>
+                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
+                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
                     <span className="text-sm text-white/80">Full Tire Services - Sales, Installation, Repair</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-primary flex-shrink-0 mt-0.5">•</span>
+                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
+                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
                     <span className="text-sm text-white/80">60-Minute Professional Installation</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-primary flex-shrink-0 mt-0.5">•</span>
+                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
+                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
                     <span className="text-sm text-white/80">Direct Import Pricing - Best Value</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-primary flex-shrink-0 mt-0.5">•</span>
+                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
+                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
                     <span className="text-sm text-white/80">Free Inspection & Air Check</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
+                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
+                    <span className="text-sm text-white/80">Free Rotation after 6 months of purchase</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-white/15 bg-white/5 backdrop-blur-xl p-5 sm:p-6">
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-lg sm:text-xl font-bold text-white mb-2">Contact</h4>
+                    <p className="text-white font-semibold">Shynu Philip</p>
+                    <p className="text-white/60 text-sm">Managing Director</p>
+                    <p className="text-white/80 text-sm mt-1">+1 (709) 351-1126</p>
+                  </div>
+                  <div>
+                    <h4 className="text-lg sm:text-xl font-bold text-white mb-2">Location</h4>
+                    <p className="text-white/80 text-sm leading-relaxed">
+                      934 Topsail Road, Mount Pearl<br />
+                      St. John's, NL, Canada<br />
+                      A1N 5L3
+                    </p>
                   </div>
                 </div>
               </div>
