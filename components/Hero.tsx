@@ -3,13 +3,6 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-const highlights = [
-  'Direct Import Advantage',
-  'Local Weather Expertise',
-  '60-Minute Install',
-  'Expert-Led Operations'
-]
-
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
     const target = `#${sectionId}`
@@ -47,10 +40,10 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.7 }}
-              className="font-bebas text-4xl leading-none text-white sm:text-5xl lg:text-5xl font-black uppercase"
+              className="font-bebas text-3xl leading-none text-white sm:text-4xl md:text-5xl lg:text-5xl font-black uppercase"
               style={{ fontWeight: 900, letterSpacing: '0.02em' }}
             >
-              ATLANTIC GRIP<br className="lg:hidden" /> <span className="text-gradient">TIRES</span>
+              ATLANTIC GRIP<br className="sm:hidden" /> <span className="text-gradient">TIRES</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -113,15 +106,15 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.7 }}
-            className="relative hidden lg:flex lg:items-center lg:justify-center"
-            style={{ transform: 'scale(1.5)' }}
+            className="relative flex items-center justify-center mt-8 lg:mt-0"
+            style={{ transform: 'scale(1.2) lg:scale(1.5)' }}
           >
             <Image
               src="/logo.png"
               alt="Atlantic Grip Tires"
               width={1200}
               height={1200}
-              className="w-full h-auto"
+              className="w-48 sm:w-64 lg:w-full max-w-[400px] lg:max-w-none h-auto"
               priority
             />
           </motion.div>
