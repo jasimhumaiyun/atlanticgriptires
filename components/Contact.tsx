@@ -72,7 +72,7 @@ export default function Contact() {
     },
     {
       title: 'Contact',
-      content: 'Shynu Philip\nManaging Director\n+1 (709) 351-1126\natlanticgriptires@gmail.com',
+      content: '+1 (709) 351-1126\natlanticgriptires@gmail.com',
       icon: (
         <svg className="w-5 h-5 text-blue-400" style={{ filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.8))' }} fill="currentColor" viewBox="0 0 24 24">
           <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
@@ -103,7 +103,7 @@ export default function Contact() {
           >
             <h2 className="text-4xl font-black md:text-5xl"><span className="text-[#DC2626]">Get</span> <span className="text-white">in Touch</span></h2>
             <p className="text-white/70 text-lg max-w-xl">
-              Visit us today or book your appointment online. We&apos;re here to keep you rolling!
+              Your one-stop shop for quality tires. Walk-ins welcome or book online!
             </p>
 
             <div className="grid gap-5 sm:grid-cols-2">
@@ -135,9 +135,9 @@ export default function Contact() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent" aria-hidden="true" />
             <div className="relative z-10">
-              <h3 className="text-2xl font-bold text-white">Book Your Service</h3>
+              <h3 className="text-2xl font-bold text-white">Schedule Your Visit</h3>
               <p className="mt-2 text-sm text-white/60">
-                60-minute installs and expert advice for Newfoundland & Labrador drivers.
+                Don't wait in line - schedule now! Walk-ins also welcome.
               </p>
 
               <form onSubmit={handleSubmit} className="mt-6 space-y-4">
@@ -171,7 +171,6 @@ export default function Contact() {
                   <option>New Tire Purchase</option>
                   <option>Tire Installation</option>
                   <option>Seasonal Changeover</option>
-                  <option>Tire Repair</option>
                   <option>Tire Rotation</option>
                   <option>Free Inspection</option>
                 </select>

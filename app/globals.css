@@ -193,6 +193,117 @@ body {
   animation: glow-pulse 3s ease-in-out infinite;
 }
 
+@keyframes title-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 20px rgba(220, 38, 38, 0.5),
+      0 0 40px rgba(220, 38, 38, 0.3),
+      0 0 60px rgba(220, 38, 38, 0.1),
+      2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    text-shadow:
+      0 0 30px rgba(220, 38, 38, 0.8),
+      0 0 60px rgba(220, 38, 38, 0.6),
+      0 0 90px rgba(220, 38, 38, 0.4),
+      0 0 120px rgba(220, 38, 38, 0.2),
+      2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+}
+
+.animate-title-glow {
+  animation: title-glow 4s ease-in-out infinite;
+}
+
+/* Logo morph effect on hover */
+.logo-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.logo-morph-inner {
+  transition: transform 1s ease-in-out, filter 0.5s ease-in-out;
+  display: block;
+}
+
+.logo-wrapper:hover .logo-morph-inner {
+  transform: rotateZ(720deg) scale(1.1);
+  filter:
+    brightness(1.2)
+    drop-shadow(0 0 30px rgba(220, 38, 38, 0.8))
+    drop-shadow(0 0 60px rgba(220, 38, 38, 0.4));
+}
+
+/* Alternative warping effect */
+@keyframes logo-warp {
+  0% {
+    transform: rotate(0deg) scale(1);
+    border-radius: 20%;
+  }
+  25% {
+    transform: rotate(90deg) scale(0.9);
+    border-radius: 50%;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    border-radius: 30%;
+  }
+  75% {
+    transform: rotate(270deg) scale(0.95);
+    border-radius: 40%;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    border-radius: 20%;
+  }
+}
+
+.logo-morph-warp {
+  transition: all 0.3s ease-out;
+  border-radius: 20%;
+  overflow: hidden;
+}
+
+.logo-morph-warp:hover {
+  animation: logo-warp 1.5s ease-in-out;
+}
+
+/* Info box hover effects */
+.info-box-glow {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.info-box-glow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.3) 0%, transparent 70%);
+  transition: all 0.5s ease-out;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.info-box-glow:hover::before {
+  width: 120%;
+  height: 120%;
+}
+
+.info-box-glow:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(220, 38, 38, 0.5);
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.05) 0%, rgba(0, 0, 0, 0.5) 100%);
+  box-shadow:
+    0 10px 40px rgba(220, 38, 38, 0.3),
+    0 20px 60px rgba(220, 38, 38, 0.15),
+    inset 0 0 30px rgba(220, 38, 38, 0.05);
+}
+
 @keyframes logo-pulse {
   0%, 100% {
     filter: drop-shadow(0 25px 50px rgba(220, 38, 38, 0.4)) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6));

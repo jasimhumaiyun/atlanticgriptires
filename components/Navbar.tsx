@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -46,8 +47,18 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center space-x-10 absolute left-1/2 -translate-x-1/2">
-            <div className="font-bebas text-3xl font-black uppercase italic whitespace-nowrap" style={{ transform: 'skewX(-12deg)' }}>
-              <span className="text-[#DC2626]">AG</span> <span className="text-white">TIRES</span>
+            <div className="flex items-center gap-3">
+              <Image
+                src="/new1.png"
+                alt="Atlantic Grip Tires"
+                width={40}
+                height={40}
+                className="w-10 h-10"
+                priority
+              />
+              <div className="font-bebas text-3xl font-black uppercase italic whitespace-nowrap" style={{ transform: 'skewX(-12deg)' }}>
+                <span className="text-[#DC2626]">AG</span> <span className="text-white">TIRES</span>
+              </div>
             </div>
             <div className="h-8 w-px bg-white/20"></div>
             {['Home', 'Services', 'Contact', 'About'].map((item, i) => (

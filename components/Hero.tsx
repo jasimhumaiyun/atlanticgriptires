@@ -17,91 +17,76 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate flex min-h-screen items-center overflow-hidden py-12 md:py-28 lg:py-32 hero-tread"
+      className="relative isolate min-h-screen flex items-center overflow-hidden pt-20"
+      style={{
+        background: 'linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0.9) 20%, rgba(220, 38, 38, 0.2) 60%, rgba(220, 38, 38, 0.4) 100%)'
+      }}
     >
-
       <div className="container-custom relative z-10">
-        <div className="flex flex-col lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-center gap-8 lg:gap-12 xl:gap-20 relative">
-          <div className="hidden lg:block absolute inset-y-0 left-1/2 -translate-x-1/2" aria-hidden="true">
-            <div className="relative h-full w-1">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#DC2626] to-transparent opacity-50"></div>
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#FF0000] via-50% to-transparent blur-sm"></div>
-              <div className="absolute left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-[#FF0000] via-50% to-transparent"></div>
-            </div>
-          </div>
+        <div className="flex flex-col items-center justify-center text-center w-full">
+
+          {/* Logo and Title */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.7 }}
-            className="flex lg:hidden items-center justify-center order-1"
-            style={{
-              transform: 'perspective(800px) rotateY(-5deg)',
-              transformStyle: 'preserve-3d'
-            }}
+            transition={{ duration: 0.7 }}
+            className="mb-6"
           >
-            <Image
-              src="/logo.png"
-              alt="Atlantic Grip Tires"
-              width={200}
-              height={200}
-              className="w-32 h-auto logo-3d-pulse"
-              priority
-            />
+            <div className="flex items-center justify-center gap-6 sm:gap-8">
+              <div className="logo-wrapper cursor-pointer">
+                <Image
+                  src="/new1.png"
+                  alt="Atlantic Grip Tires"
+                  width={200}
+                  height={200}
+                  className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 logo-morph-inner"
+                  priority
+                />
+              </div>
+              <div className="flex flex-col items-start gap-3">
+                <h1 className="font-bebas text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black uppercase animate-title-glow">
+                  <span className="text-[#DC2626]">ATLANTIC GRIP</span>{' '}
+                  <span className="text-white">TIRES</span>
+                </h1>
+                {/* Badge */}
+                <span className="inline-flex badge-chip text-[0.7rem] text-white/80">
+                  One-Stop Shop • Walk-Ins Welcome • No Appointment Required
+                </span>
+                {/* Buttons */}
+                <div className="flex flex-row items-center gap-2 sm:gap-4">
+                  <button
+                    onClick={() => scrollToSection('contact')}
+                    className="bg-gradient-red text-white transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_30px_120px_rgba(220,38,38,0.35)] rounded-full px-4 py-2 sm:px-7 sm:py-2.5 text-xs sm:text-base font-semibold cursor-pointer"
+                  >
+                    Book Appointment
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('services')}
+                    className="rounded-full border border-white/20 px-4 py-2 sm:px-7 sm:py-2.5 text-xs sm:text-base font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary/10 cursor-pointer"
+                  >
+                    View Services
+                  </button>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75 }}
-            className="relative z-10 max-w-2xl w-full lg:w-auto order-2 lg:order-1"
+            className="relative z-10 max-w-4xl w-full"
           >
-            <motion.span
-              initial={{ opacity: 0, y: -12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.6 }}
-              className="hidden sm:inline-flex badge-chip text-[0.7rem] text-white/80 mb-6 relative z-20"
-            >
-              Direct Import • Premium Quality • Unbeatable Prices
-            </motion.span>
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.7 }}
-              className="hidden sm:block font-bebas text-3xl leading-none text-white sm:text-4xl md:text-5xl lg:text-5xl font-black uppercase"
-              style={{ fontWeight: 900, letterSpacing: '0.02em' }}
-            >
-              <span className="text-[#DC2626] animate-glow-pulse" style={{ textShadow: '0 0 50px rgba(220,38,38,1), 0 0 80px rgba(220,38,38,0.8)' }}>ATLANTIC GRIP</span> <span className="text-white animate-glow-pulse" style={{ textShadow: '0 0 50px rgba(255,255,255,1), 0 0 80px rgba(255,255,255,0.8)' }}>TIRES</span>
-            </motion.h1>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.45, duration: 0.7 }}
-              className="mt-6 sm:mt-8 flex flex-row items-center gap-2 sm:gap-4"
-            >
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="bg-gradient-red text-white transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_30px_120px_rgba(220,38,38,0.35)] rounded-full px-4 py-2 sm:px-7 sm:py-2.5 text-xs sm:text-base font-semibold cursor-pointer text-center flex-1 sm:flex-none"
-              >
-                Book Appointment
-              </button>
-              <button
-                onClick={() => scrollToSection('services')}
-                className="rounded-full border border-white/20 px-4 py-2 sm:px-7 sm:py-2.5 text-xs sm:text-base font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary/10 cursor-pointer text-center flex-1 sm:flex-none"
-              >
-                View Services
-              </button>
-            </motion.div>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55, duration: 0.7 }}
-              className="mt-8 sm:mt-10 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-4"
+              className="mt-8 sm:mt-10 grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-7xl mx-auto"
             >
-              <div className="rounded-2xl border border-white/15 bg-black/50 backdrop-blur-xl p-5 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-4">What We Offer:</h3>
-                <div className="hidden sm:block space-y-3">
+              <div className="rounded-2xl border border-white/15 bg-black/50 backdrop-blur-xl p-5 sm:p-6 text-left info-box-glow cursor-pointer">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-3 text-left">What We Offer:</h3>
+                <p className="text-white/70 text-xs sm:text-sm mb-4 text-left">For sedans, SUVs, light trucks & performance vehicles</p>
+                <div className="hidden sm:block space-y-2">
                   <div className="flex items-start gap-3">
                     <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
                       <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
@@ -109,8 +94,8 @@ export default function Hero() {
                       <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
                     </svg>
                     <div>
-                      <span className="text-white font-semibold text-sm">Full Tire Services</span>
-                      <span className="text-white/60 text-xs block mt-0.5">Sales • Installation • Rotation • Repair</span>
+                      <span className="text-white font-semibold text-sm">Wide Selection of Premium Brands</span>
+                      <span className="text-white/60 text-xs block mt-0.5">Top quality tires at competitive prices</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -121,7 +106,7 @@ export default function Hero() {
                     </svg>
                     <div>
                       <span className="text-white font-semibold text-sm">Fast Installation</span>
-                      <span className="text-white/60 text-xs block mt-0.5">Professional mounting in 60 minutes</span>
+                      <span className="text-white/60 text-xs block mt-0.5">Drive in, drive out in 60 minutes</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -132,7 +117,7 @@ export default function Hero() {
                     </svg>
                     <div>
                       <span className="text-white font-semibold text-sm">Direct Import Pricing</span>
-                      <span className="text-white/60 text-xs block mt-0.5">Best prices through direct sourcing</span>
+                      <span className="text-white/60 text-xs block mt-0.5">Serving individual & commercial clients</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -165,7 +150,7 @@ export default function Hero() {
                       <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
                       <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
                     </svg>
-                    <span className="text-sm text-white/80">Full Tire Services - Sales, Installation, Repair</span>
+                    <span className="text-sm text-white/80">Wide Selection - Premium brands for all vehicles</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
@@ -173,7 +158,7 @@ export default function Hero() {
                       <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
                       <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
                     </svg>
-                    <span className="text-sm text-white/80">60-Minute Professional Installation</span>
+                    <span className="text-sm text-white/80">60-Minute Installation - No appointment needed</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
@@ -181,7 +166,7 @@ export default function Hero() {
                       <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
                       <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
                     </svg>
-                    <span className="text-sm text-white/80">Direct Import Pricing - Best Value</span>
+                    <span className="text-sm text-white/80">Direct Import - Best value for all clients</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
@@ -202,12 +187,10 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-white/15 bg-white/5 backdrop-blur-xl p-5 sm:p-6">
+              <div className="rounded-2xl border border-white/15 bg-white/5 backdrop-blur-xl p-5 sm:p-6 text-left info-box-glow cursor-pointer">
                 <div className="space-y-4">
                   <div>
                     <h4 className="text-lg sm:text-xl font-bold text-white mb-2">Contact</h4>
-                    <p className="text-white font-semibold">Shynu Philip</p>
-                    <p className="text-white/60 text-sm">Managing Director</p>
                     <div className="flex items-center gap-2 mt-1">
                       <svg className="w-4 h-4 text-blue-400" style={{ filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.8))' }} fill="currentColor" viewBox="0 0 24 24">
                         <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
@@ -231,34 +214,6 @@ export default function Hero() {
                 </div>
               </div>
             </motion.div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4, duration: 0.7 }}
-            className="relative hidden lg:flex items-center justify-center mt-6 sm:mt-8 lg:mt-0 order-3 lg:order-2"
-            style={{
-              transform: 'scale(1.5) perspective(1000px) rotateY(-5deg)',
-              transformStyle: 'preserve-3d'
-            }}
-          >
-            <div className="relative">
-              <Image
-                src="/logo.png"
-                alt="Atlantic Grip Tires"
-                width={1200}
-                height={1200}
-                className="w-48 sm:w-64 lg:w-full max-w-[400px] lg:max-w-none h-auto relative z-10 logo-3d-pulse"
-                priority
-              />
-              <div
-                className="absolute inset-0 bg-gradient-to-b from-transparent to-red-600/20 blur-3xl -z-10"
-                style={{
-                  transform: 'translateZ(-50px) scale(0.9)',
-                }}
-              />
-            </div>
           </motion.div>
         </div>
       </div>

@@ -6,19 +6,15 @@ import { useInView } from 'react-intersection-observer'
 const services = [
   {
     title: 'New Tire Sales',
-    description: 'Wide selection of premium brands for all vehicle types'
+    description: 'Wide selection of brands for all vehicles'
   },
   {
-    title: 'Tire Installation',
+    title: 'Tire Installation & Balancing',
     description: 'Expert mounting and precision balancing'
   },
   {
     title: 'Seasonal Changeover',
     description: 'Swift winter/summer tire swaps'
-  },
-  {
-    title: 'Flat Tire Repair',
-    description: 'Professional puncture repairs'
   },
   {
     title: 'Tire Rotation',
@@ -36,20 +32,24 @@ const services = [
 
 const advantages = [
   {
-    title: 'Direct Import Advantage',
-    detail: 'Streamlined supply chain delivering greater value throughout NL.'
+    title: 'Wide Selection of Brands',
+    detail: 'Premium tire brands for sedans, SUVs, light trucks & performance vehicles.'
   },
   {
-    title: 'Local Weather Expertise',
-    detail: 'Curated inventory suited to Newfoundland & Labrador conditions.'
+    title: 'Expert Advice',
+    detail: 'Our tire specialists help you choose the right fit for your needs.'
   },
   {
-    title: '60-Minute Install',
-    detail: 'Expert team completes installations in 60 minutes.'
+    title: 'Fast Installation',
+    detail: 'Drive in, drive out in less than 60 minutes. No appointment required.'
   },
   {
-    title: 'Expert-Led Operations',
-    detail: 'Expert advice and exceptional service from tire specialists.'
+    title: 'Competitive Pricing',
+    detail: 'Quality tires at affordable rates through direct import advantage.'
+  },
+  {
+    title: 'Free Services',
+    detail: 'Complimentary tire inspection, air check & rotation after 6 months.'
   }
 ]
 

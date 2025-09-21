@@ -6,8 +6,8 @@ import { useInView } from 'react-intersection-observer'
 
 const values = [
   'Direct Import Advantage',
-  'Curated Inventory',
-  'Expert-Led Operations',
+  'Specialized & Curated Inventory',
+  'Expert-Led Operations & Service',
   'Supply Chain Resilience'
 ]
 
