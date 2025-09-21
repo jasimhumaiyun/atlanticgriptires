@@ -137,7 +137,7 @@ export default function Contact() {
             <div className="relative z-10">
               <h3 className="text-2xl font-bold text-white">Schedule Your Visit</h3>
               <p className="mt-2 text-sm text-white/60">
-                Don't wait in line - schedule now! Walk-ins also welcome.
+                Don&apos;t wait in line - schedule now! Walk-ins also welcome.
               </p>
 
               <form onSubmit={handleSubmit} className="mt-6 space-y-4">
