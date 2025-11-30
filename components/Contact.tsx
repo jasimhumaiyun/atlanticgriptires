@@ -1,8 +1,18 @@
 'use client'
 
 import { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+
+type FormData = {
+  name: string
+  phone: string
+  email: string
+  service: string
+  date: string
+  notes: string
+}
 
 export default function Contact() {
   const [ref, inView] = useInView({
@@ -11,25 +21,21 @@ export default function Contact() {
   })
 
   const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success'>('idle')
-  const [errorMessage, setErrorMessage] = useState<string | null>(null)
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
+  } = useForm<FormData>({
+    mode: 'onBlur'
+  })
+
+  const onSubmit = async (data: FormData) => {
     if (formStatus === 'loading') return
 
-    const form = e.currentTarget
-    const formData = new FormData(form)
-
-    const payload = {
-      name: String(formData.get('name') || '').trim(),
-      phone: String(formData.get('phone') || '').trim(),
-      email: String(formData.get('email') || '').trim(),
-      service: String(formData.get('service') || '').trim(),
-      date: String(formData.get('date') || '').trim(),
-      notes: String(formData.get('notes') || '').trim()
-    }
-
-    setErrorMessage(null)
+    setSubmitError(null)
     setFormStatus('loading')
 
     try {
@@ -38,24 +44,24 @@ export default function Contact() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(data)
       })
 
-      const data = await response.json()
+      const result = await response.json()
 
-      if (!response.ok || !data.success) {
-        throw new Error(data?.message || 'Unable to submit booking right now.')
+      if (!response.ok || !result.success) {
+        throw new Error(result?.message || 'Unable to submit booking right now.')
       }
 
       setFormStatus('success')
 
       setTimeout(() => {
         setFormStatus('idle')
-        form.reset()
+        reset()
       }, 3000)
     } catch (error) {
       console.error('Booking submission failed', error)
-      setErrorMessage('Something went wrong. Please try again or call us directly.')
+      setSubmitError('Something went wrong. Please try again or call us directly.')
       setFormStatus('idle')
     }
   }
@@ -63,7 +69,18 @@ export default function Contact() {
   const contactInfo = [
     {
       title: 'Location',
-      content: '934 Topsail Road, Mount Pearl\nSt. John\'s, NL, Canada\nA1N 5L3',
+      content: (
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=934+Topsail+Road+Mount+Pearl+NL+A1N+5L3+Canada"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block hover:text-white transition-colors"
+        >
+          934 Topsail Road, Mount Pearl<br />
+          St. John&apos;s, NL, Canada<br />
+          A1N 5L3
+        </a>
+      ),
       icon: (
         <svg className="w-5 h-5 text-blue-400" style={{ filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.8))' }} fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
@@ -72,7 +89,12 @@ export default function Contact() {
     },
     {
       title: 'Contact',
-      content: '+1 (709) 351-1126\natlanticgriptires@gmail.com',
+      content: (
+        <div className="space-y-1">
+          <a href="tel:+17093511126" className="block text-white/70 hover:text-white transition-colors">+1 (709) 351-1126</a>
+          <a href="mailto:atlanticgriptires@gmail.com" className="block text-white/70 hover:text-white transition-colors">atlanticgriptires@gmail.com</a>
+        </div>
+      ),
       icon: (
         <svg className="w-5 h-5 text-blue-400" style={{ filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.8))' }} fill="currentColor" viewBox="0 0 24 24">
           <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
@@ -80,6 +102,10 @@ export default function Contact() {
       )
     }
   ]
+
+  const inputBaseClass = "w-full rounded-xl bg-white/10 px-4 py-3 text-white placeholder-white/50 transition focus:outline-none"
+  const inputNormalClass = `${inputBaseClass} border border-white/15 focus:border-primary`
+  const inputErrorClass = `${inputBaseClass} border-2 border-red-500 focus:border-red-400`
 
   return (
     <section id="contact" className="section-padding bg-gradient-dark relative overflow-hidden">
@@ -120,7 +146,7 @@ export default function Contact() {
                       {item.icon}
                       <h4 className="text-sm uppercase tracking-[0.25em] text-[#DC2626] font-bold">{item.title}</h4>
                     </div>
-                    <p className="whitespace-pre-line text-sm text-white/70">{item.content}</p>
+                    <div className="whitespace-pre-line text-sm text-white/70">{item.content}</div>
                   </div>
                 </motion.div>
               ))}
@@ -140,55 +166,124 @@ export default function Contact() {
                 Don&apos;t wait in line - schedule now! Walk-ins also welcome.
               </p>
 
-              <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  required
-                  className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder-white/50 transition focus:border-primary focus:outline-none"
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number"
-                  required
-                  className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder-white/50 transition focus:border-primary focus:outline-none"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  required
-                  className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder-white/50 transition focus:border-primary focus:outline-none"
-                />
-                <select
-                  name="service"
-                  required
-                  className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white transition focus:border-primary focus:outline-none [&>option]:bg-gray-900"
-                >
-                  <option value="">Select Service</option>
-                  <option>New Tire Purchase</option>
-                  <option>Tire Installation</option>
-                  <option>Seasonal Changeover</option>
-                  <option>Tire Rotation</option>
-                  <option>Free Inspection</option>
-                </select>
+              <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-4" noValidate>
+                {/* Name Field */}
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    aria-invalid={errors.name ? 'true' : 'false'}
+                    className={errors.name ? inputErrorClass : inputNormalClass}
+                    {...register('name', {
+                      required: 'Name is required',
+                      minLength: { value: 2, message: 'Name must be at least 2 characters' }
+                    })}
+                  />
+                  {errors.name && (
+                    <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                      {errors.name.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Phone Field */}
+                <div>
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    aria-invalid={errors.phone ? 'true' : 'false'}
+                    className={errors.phone ? inputErrorClass : inputNormalClass}
+                    {...register('phone', {
+                      required: 'Phone number is required',
+                      pattern: {
+                        value: /^[\d\s\-+()]{7,}$/,
+                        message: 'Please enter a valid phone number'
+                      }
+                    })}
+                  />
+                  {errors.phone && (
+                    <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                      {errors.phone.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Email Field */}
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    aria-invalid={errors.email ? 'true' : 'false'}
+                    className={errors.email ? inputErrorClass : inputNormalClass}
+                    {...register('email', {
+                      required: 'Email is required',
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: 'Please enter a valid email address'
+                      }
+                    })}
+                  />
+                  {errors.email && (
+                    <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                      {errors.email.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Service Field */}
+                <div>
+                  <select
+                    aria-invalid={errors.service ? 'true' : 'false'}
+                    className={`${errors.service ? inputErrorClass : inputNormalClass} [&>option]:bg-gray-900`}
+                    {...register('service', {
+                      required: 'Please select a service'
+                    })}
+                  >
+                    <option value="">Select Service</option>
+                    <option value="New Tire Purchase">New Tire Purchase</option>
+                    <option value="Tire Installation">Tire Installation</option>
+                    <option value="Seasonal Changeover">Seasonal Changeover</option>
+                    <option value="Tire Rotation">Tire Rotation</option>
+                    <option value="Free Inspection">Free Inspection</option>
+                  </select>
+                  {errors.service && (
+                    <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                      {errors.service.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Date Field (optional) */}
                 <input
                   type="date"
-                  name="date"
-                  placeholder="Preferred Date"
-                  className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder-white/50 transition focus:border-primary focus:outline-none"
+                  className={inputNormalClass}
+                  {...register('date')}
                 />
+
+                {/* Notes Field (optional) */}
                 <textarea
-                  name="notes"
                   placeholder="Additional Notes (Vehicle type, tire size, etc.)"
                   rows={3}
-                  className="w-full resize-none rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder-white/40 transition focus:border-primary focus:outline-none"
+                  className={`${inputNormalClass} resize-none border-white/10`}
+                  {...register('notes')}
                 />
-                {errorMessage && (
-                  <p className="text-sm text-red-400">{errorMessage}</p>
+
+                {submitError && (
+                  <p className="text-sm text-red-400">{submitError}</p>
                 )}
+
                 <button
                   type="submit"
                   disabled={formStatus === 'loading'}

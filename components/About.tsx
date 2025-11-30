@@ -47,6 +47,8 @@ export default function About() {
                       </p>
                       <button
                         onClick={() => setShowMore(!showMore)}
+                        aria-expanded={showMore}
+                        aria-label={showMore ? 'Show less about us content' : 'Show more about us content'}
                         className="text-primary text-sm mt-2 font-medium"
                       >
                         {showMore ? 'Show Less' : 'Show More'}

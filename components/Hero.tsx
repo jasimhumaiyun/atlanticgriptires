@@ -195,21 +195,26 @@ export default function Hero() {
                       <svg className="w-4 h-4 text-blue-400" style={{ filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.8))' }} fill="currentColor" viewBox="0 0 24 24">
                         <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
                       </svg>
-                      <p className="text-white/80 text-sm">+1 (709) 351-1126</p>
+                      <a href="tel:+17093511126" className="text-white/80 text-sm hover:text-white transition-colors">+1 (709) 351-1126</a>
                     </div>
                   </div>
                   <div>
                     <h4 className="text-lg sm:text-xl font-bold text-white mb-2">Location</h4>
-                    <div className="flex items-start gap-2">
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=934+Topsail+Road+Mount+Pearl+NL+A1N+5L3+Canada"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-start gap-2 group"
+                    >
                       <svg className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" style={{ filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.8))' }} fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                       </svg>
-                      <p className="text-white/80 text-sm leading-relaxed">
+                      <p className="text-white/80 text-sm leading-relaxed group-hover:text-white transition-colors">
                         934 Topsail Road, Mount Pearl<br />
                         St. John&apos;s, NL, Canada<br />
                         A1N 5L3
                       </p>
-                    </div>
+                    </a>
                   </div>
                 </div>
               </div>

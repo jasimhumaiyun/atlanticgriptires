@@ -1,12 +1,14 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const mobileMenuRef = useRef<HTMLDivElement>(null)
+  const hamburgerRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +17,34 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Close menu on Escape key and handle focus trapping
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false)
+        hamburgerRef.current?.focus()
+      }
+
+      // Focus trapping
+      if (e.key === 'Tab' && isMobileMenuOpen && mobileMenuRef.current) {
+        const focusableElements = mobileMenuRef.current.querySelectorAll('button')
+        const firstElement = focusableElements[0]
+        const lastElement = focusableElements[focusableElements.length - 1]
+
+        if (e.shiftKey && document.activeElement === firstElement) {
+          e.preventDefault()
+          lastElement?.focus()
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+          e.preventDefault()
+          firstElement?.focus()
+        }
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [isMobileMenuOpen])
 
   const scrollToSection = (sectionId: string) => {
     const target = `#${sectionId}`
@@ -34,7 +64,10 @@ export default function Navbar() {
       <div className="container-custom">
         <div className="flex items-center justify-center h-20 relative">
           <button
+            ref={hamburgerRef}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMobileMenuOpen}
             className="md:hidden flex flex-col space-y-1.5 z-50 absolute left-0"
           >
             <span className={`block w-7 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
@@ -82,14 +115,18 @@ export default function Navbar() {
 
       {isMobileMenuOpen && (
         <motion.div
+          ref={mobileMenuRef}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden absolute top-20 left-0 w-full bg-black/98 backdrop-blur-xl border-t border-primary/20"
+          role="menu"
+          aria-label="Mobile navigation"
         >
           <div className="flex flex-col p-6 space-y-4">
             {['Home', 'Services', 'Contact', 'About'].map((item) => (
               <button
                 key={item}
+                role="menuitem"
                 onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
                 className={`text-left py-2 transition-colors ${
                   item === 'Home' ? 'text-[#DC2626] hover:text-red-400' : 'text-white hover:text-primary'
