@@ -44,9 +44,9 @@ export default function Hero() {
                   priority
                 />
               </div>
-              <div className="flex flex-col gap-3 flex-1">
+              <div className="flex flex-col gap-3 flex-1 items-start">
                 {/* Tagline - Mobile */}
-                <p className="text-white/90 text-sm font-medium leading-snug">
+                <p className="text-white/90 text-sm font-medium leading-snug text-left">
                   Your <span className="text-[#DC2626] font-bold">one-stop shop</span> for quality tires & fast installation
                 </p>
                 {/* Buttons - Mobile */}
