@@ -169,9 +169,11 @@ export default function Contact() {
               <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-4 overflow-hidden" noValidate>
                 {/* Name Field */}
                 <div>
+                  <label className="text-xs text-white/60 mb-1 block">Your Name</label>
                   <input
                     type="text"
-                    placeholder="Your Name"
+                    placeholder="John Smith"
+                    aria-label="Your Name"
                     aria-invalid={errors.name ? 'true' : 'false'}
                     className={errors.name ? inputErrorClass : inputNormalClass}
                     {...register('name', {
@@ -191,9 +193,11 @@ export default function Contact() {
 
                 {/* Phone Field */}
                 <div>
+                  <label className="text-xs text-white/60 mb-1 block">Phone Number</label>
                   <input
                     type="tel"
-                    placeholder="Phone Number"
+                    placeholder="709-555-1234"
+                    aria-label="Phone Number"
                     aria-invalid={errors.phone ? 'true' : 'false'}
                     className={errors.phone ? inputErrorClass : inputNormalClass}
                     {...register('phone', {
@@ -216,9 +220,11 @@ export default function Contact() {
 
                 {/* Email Field */}
                 <div>
+                  <label className="text-xs text-white/60 mb-1 block">Email Address</label>
                   <input
                     type="email"
-                    placeholder="Email Address"
+                    placeholder="you@example.com"
+                    aria-label="Email Address"
                     aria-invalid={errors.email ? 'true' : 'false'}
                     className={errors.email ? inputErrorClass : inputNormalClass}
                     {...register('email', {
@@ -241,7 +247,9 @@ export default function Contact() {
 
                 {/* Service Field */}
                 <div>
+                  <label className="text-xs text-white/60 mb-1 block">Service Needed</label>
                   <select
+                    aria-label="Service Needed"
                     aria-invalid={errors.service ? 'true' : 'false'}
                     className={`${errors.service ? inputErrorClass : inputNormalClass} [&>option]:bg-gray-900`}
                     {...register('service', {
@@ -267,21 +275,26 @@ export default function Contact() {
 
                 {/* Date Field (optional) */}
                 <div>
-                  <label className="text-xs text-white/50 mb-1 block">Preferred Date (optional)</label>
+                  <label className="text-xs text-white/60 mb-1 block">Preferred Date (optional)</label>
                   <input
                     type="date"
+                    aria-label="Preferred Date"
                     className={inputNormalClass}
                     {...register('date')}
                   />
                 </div>
 
                 {/* Notes Field (optional) */}
-                <textarea
-                  placeholder="Additional Notes (Vehicle type, tire size, etc.)"
-                  rows={3}
-                  className={`${inputNormalClass} resize-none border-white/10`}
-                  {...register('notes')}
-                />
+                <div>
+                  <label className="text-xs text-white/60 mb-1 block">Additional Notes (optional)</label>
+                  <textarea
+                    placeholder="Vehicle type, tire size, etc."
+                    aria-label="Additional Notes"
+                    rows={3}
+                    className={`${inputNormalClass} resize-none border-white/10`}
+                    {...register('notes')}
+                  />
+                </div>
 
                 {submitError && (
                   <p className="text-sm text-red-400">{submitError}</p>
