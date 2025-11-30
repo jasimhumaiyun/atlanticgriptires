@@ -266,12 +266,11 @@ export default function Contact() {
                 </div>
 
                 {/* Date Field (optional) */}
-                <div className="relative overflow-hidden">
+                <div>
                   <label className="text-xs text-white/50 mb-1 block">Preferred Date (optional)</label>
                   <input
                     type="date"
-                    className="w-full rounded-xl bg-white/10 px-4 py-3 text-white border border-white/15 focus:border-primary focus:outline-none transition box-border"
-                    style={{ maxWidth: '100%' }}
+                    className={inputNormalClass}
                     {...register('date')}
                   />
                 </div>
