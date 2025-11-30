@@ -45,22 +45,10 @@ export default function Hero() {
                 />
               </div>
               <div className="flex flex-col gap-3 flex-1">
-                {/* Pill Badges - Mobile */}
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/80 shadow">
-                    <svg className="w-3 h-3 text-[#DC2626]" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M9.5 15.8 5.7 12l-1.4 1.4 5.2 5.2L20 8.3 18.6 7z"/>
-                    </svg>
-                    Walk-Ins
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/80 shadow">
-                    <svg className="w-3 h-3 text-[#DC2626]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <circle cx="12" cy="12" r="9"/>
-                      <path d="M12 7v5l3 2"/>
-                    </svg>
-                    60-Min
-                  </span>
-                </div>
+                {/* Tagline - Mobile */}
+                <p className="text-white/90 text-sm font-medium leading-snug">
+                  Your <span className="text-[#DC2626] font-bold">one-stop shop</span> for quality tires & fast installation
+                </p>
                 {/* Buttons - Mobile */}
                 <div className="flex flex-row items-center gap-2">
                   <button
