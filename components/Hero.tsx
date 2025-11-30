@@ -44,23 +44,34 @@ export default function Hero() {
                   priority
                 />
               </div>
-              <div className="flex flex-col items-start gap-2">
-                {/* Badge - Mobile */}
-                <div className="flex flex-col gap-0.5">
-                  <span className="text-[0.6rem] text-white/70 uppercase tracking-wider">One-Stop Shop</span>
-                  <span className="text-[0.6rem] text-white/70 uppercase tracking-wider">Walk-Ins Welcome</span>
+              <div className="flex flex-col gap-3 flex-1">
+                {/* Pill Badges - Mobile */}
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/80 shadow">
+                    <svg className="w-3 h-3 text-[#DC2626]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M9.5 15.8 5.7 12l-1.4 1.4 5.2 5.2L20 8.3 18.6 7z"/>
+                    </svg>
+                    Walk-Ins
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/80 shadow">
+                    <svg className="w-3 h-3 text-[#DC2626]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <circle cx="12" cy="12" r="9"/>
+                      <path d="M12 7v5l3 2"/>
+                    </svg>
+                    60-Min
+                  </span>
                 </div>
                 {/* Buttons - Mobile */}
                 <div className="flex flex-row items-center gap-2">
                   <button
                     onClick={() => scrollToSection('contact')}
-                    className="bg-gradient-red text-white rounded-full px-4 py-2 text-xs font-semibold cursor-pointer"
+                    className="bg-gradient-red text-white rounded-full px-5 py-2.5 text-sm font-semibold cursor-pointer hover:-translate-y-1 transition"
                   >
                     Book Now
                   </button>
                   <button
                     onClick={() => scrollToSection('services')}
-                    className="rounded-full border border-white/20 px-4 py-2 text-xs font-semibold text-white cursor-pointer"
+                    className="rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-white cursor-pointer hover:-translate-y-1 transition"
                   >
                     Services
                   </button>
