@@ -32,19 +32,54 @@ export default function Hero() {
             transition={{ duration: 0.7 }}
             className="mb-6"
           >
-            <div className="flex items-center justify-center gap-6 sm:gap-8">
+            {/* Mobile Layout */}
+            <div className="flex flex-col items-center gap-4 sm:hidden">
               <div className="logo-wrapper cursor-pointer">
                 <Image
                   src="/new1.png"
                   alt="Atlantic Grip Tires"
                   width={200}
                   height={200}
-                  className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 logo-morph-inner"
+                  className="w-28 h-auto object-contain logo-morph-inner"
+                  priority
+                />
+              </div>
+              {/* Badge - Mobile */}
+              <div className="flex flex-col items-center gap-1 text-center">
+                <span className="text-[0.65rem] text-white/70 uppercase tracking-widest">One-Stop Shop</span>
+                <span className="text-[0.65rem] text-white/70 uppercase tracking-widest">Walk-Ins Welcome</span>
+              </div>
+              {/* Buttons - Mobile */}
+              <div className="flex flex-row items-center gap-3">
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className="bg-gradient-red text-white transition-transform duration-300 hover:-translate-y-1 rounded-full px-5 py-2.5 text-sm font-semibold cursor-pointer"
+                >
+                  Book Now
+                </button>
+                <button
+                  onClick={() => scrollToSection('services')}
+                  className="rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+                >
+                  Services
+                </button>
+              </div>
+            </div>
+
+            {/* Desktop Layout */}
+            <div className="hidden sm:flex items-center justify-center gap-8">
+              <div className="logo-wrapper cursor-pointer">
+                <Image
+                  src="/new1.png"
+                  alt="Atlantic Grip Tires"
+                  width={200}
+                  height={200}
+                  className="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 object-contain logo-morph-inner"
                   priority
                 />
               </div>
               <div className="flex flex-col items-start gap-3">
-                <h1 className="font-bebas text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black uppercase animate-title-glow">
+                <h1 className="font-bebas text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black uppercase animate-title-glow">
                   <span className="text-[#DC2626]">ATLANTIC GRIP</span>{' '}
                   <span className="text-white">TIRES</span>
                 </h1>
@@ -53,16 +88,16 @@ export default function Hero() {
                   One-Stop Shop • Walk-Ins Welcome • No Appointment Required
                 </span>
                 {/* Buttons */}
-                <div className="flex flex-row items-center gap-2 sm:gap-4">
+                <div className="flex flex-row items-center gap-4">
                   <button
                     onClick={() => scrollToSection('contact')}
-                    className="bg-gradient-red text-white transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_30px_120px_rgba(220,38,38,0.35)] rounded-full px-4 py-2 sm:px-7 sm:py-2.5 text-xs sm:text-base font-semibold cursor-pointer"
+                    className="bg-gradient-red text-white transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_30px_120px_rgba(220,38,38,0.35)] rounded-full px-7 py-2.5 text-base font-semibold cursor-pointer"
                   >
                     Book Appointment
                   </button>
                   <button
                     onClick={() => scrollToSection('services')}
-                    className="rounded-full border border-white/20 px-4 py-2 sm:px-7 sm:py-2.5 text-xs sm:text-base font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary/10 cursor-pointer"
+                    className="rounded-full border border-white/20 px-7 py-2.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary/10 cursor-pointer"
                   >
                     View Services
                   </button>
