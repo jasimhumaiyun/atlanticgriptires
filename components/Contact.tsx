@@ -157,7 +157,7 @@ export default function Contact() {
             initial={{ opacity: 0, scale: 0.94 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.7 }}
-            className="section-shell relative overflow-hidden px-6 py-8 md:px-10 text-white"
+            className="section-shell relative overflow-hidden px-4 py-6 sm:px-6 sm:py-8 md:px-10 text-white max-w-full"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent" aria-hidden="true" />
             <div className="relative z-10">
@@ -266,11 +266,14 @@ export default function Contact() {
                 </div>
 
                 {/* Date Field (optional) */}
-                <input
-                  type="date"
-                  className={inputNormalClass}
-                  {...register('date')}
-                />
+                <div className="relative">
+                  <label className="text-xs text-white/50 mb-1 block">Preferred Date (optional)</label>
+                  <input
+                    type="date"
+                    className={`${inputNormalClass} w-full max-w-full`}
+                    {...register('date')}
+                  />
+                </div>
 
                 {/* Notes Field (optional) */}
                 <textarea
