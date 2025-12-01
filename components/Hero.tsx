@@ -144,17 +144,6 @@ export default function Hero() {
                       <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
                     </svg>
                     <div>
-                      <span className="text-white font-semibold text-sm">Fast Installation</span>
-                      <span className="text-white/60 text-xs block mt-0.5">Drive in, drive out in 60 minutes</span>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
-                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
-                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
-                    </svg>
-                    <div>
                       <span className="text-white font-semibold text-sm">Direct Import Pricing</span>
                       <span className="text-white/60 text-xs block mt-0.5">Serving individual & commercial clients</span>
                     </div>
@@ -166,8 +155,8 @@ export default function Hero() {
                       <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
                     </svg>
                     <div>
-                      <span className="text-white font-semibold text-sm">Free Inspection</span>
-                      <span className="text-white/60 text-xs block mt-0.5">Complimentary tire check & air pressure</span>
+                      <span className="text-white font-semibold text-sm">Free Brake Inspection</span>
+                      <span className="text-white/60 text-xs block mt-0.5">Free brake inspection during tire change</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -177,8 +166,8 @@ export default function Hero() {
                       <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
                     </svg>
                     <div>
-                      <span className="text-white font-semibold text-sm">Free Tire Rotation</span>
-                      <span className="text-white/60 text-xs block mt-0.5">Complimentary rotation after 6 months of purchase</span>
+                      <span className="text-white font-semibold text-sm">No Appointment Required</span>
+                      <span className="text-white/60 text-xs block mt-0.5">Walk-ins welcome anytime</span>
                     </div>
                   </div>
                 </div>
@@ -197,14 +186,6 @@ export default function Hero() {
                       <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
                       <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
                     </svg>
-                    <span className="text-sm text-white/80">60-Minute Installation - No appointment needed</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
-                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
-                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
-                    </svg>
                     <span className="text-sm text-white/80">Direct Import - Best value for all clients</span>
                   </div>
                   <div className="flex items-start gap-2">
@@ -213,7 +194,7 @@ export default function Hero() {
                       <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
                       <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
                     </svg>
-                    <span className="text-sm text-white/80">Free Inspection & Air Check</span>
+                    <span className="text-sm text-white/80">Free Brake Inspection during tire change</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
@@ -221,7 +202,7 @@ export default function Hero() {
                       <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
                       <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
                     </svg>
-                    <span className="text-sm text-white/80">Free Rotation after 6 months of purchase</span>
+                    <span className="text-sm text-white/80">No Appointment Required - Walk-ins welcome</span>
                   </div>
                 </div>
               </div>
