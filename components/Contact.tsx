@@ -108,7 +108,7 @@ export default function Contact() {
   const inputErrorClass = `${inputBaseClass} border-2 border-red-500 focus:border-red-400`
 
   return (
-    <section id="contact" className="section-padding relative">
+    <section id="contact" className="section-padding relative pb-20 sm:pb-24">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(248,113,113,0.08),transparent_55%)]" aria-hidden="true" />
       <div className="container-custom relative">
         <div ref={ref} className="grid gap-12 lg:grid-cols-2 relative">

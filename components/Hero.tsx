@@ -44,10 +44,10 @@ export default function Hero() {
                   priority
                 />
               </div>
-              <div className="flex flex-col gap-3 flex-1 items-start">
-                {/* Tagline - Mobile */}
-                <p className="text-white/90 text-xs font-medium leading-snug text-left">
-                  Your <span className="text-[#DC2626] font-bold">one-stop</span> tire & service shop
+              <div className="flex flex-col gap-2 flex-1 items-start">
+                {/* Script Tagline - Mobile */}
+                <p className="font-script text-lg text-white/90 whitespace-nowrap">
+                  Grip the journey ahead. Built on experience.
                 </p>
                 {/* Buttons - Mobile */}
                 <div className="flex flex-row items-center gap-2">
