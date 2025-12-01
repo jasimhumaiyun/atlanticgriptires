@@ -8,7 +8,8 @@ const values = [
   'Direct Import Advantage',
   'Specialized & Curated Inventory',
   'Expert-Led Operations & Service',
-  'Supply Chain Resilience'
+  'Supply Chain Resilience',
+  'Serving NL with Expert Service'
 ]
 
 export default function About() {
@@ -19,8 +20,9 @@ export default function About() {
   const [showMore, setShowMore] = useState(false)
 
   return (
-    <section id="about" className="section-padding relative">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(248,113,113,0.08),transparent_55%)]" aria-hidden="true" />
+    <section id="about" className="section-padding bg-gradient-dark relative overflow-hidden">
+      <div className="absolute inset-0 opacity-40" aria-hidden="true"
+        style={{ background: 'radial-gradient(circle at top left, rgba(220,38,38,0.32), transparent 55%)' }} />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-40" aria-hidden="true" />
       <div className="container-custom relative">
         <motion.div
@@ -109,9 +111,6 @@ export default function About() {
                     </li>
                   ))}
                 </ul>
-              </div>
-              <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-6 text-sm text-white/70 backdrop-blur">
-                <p>Direct import model. Streamlined supply chain. Expert-led service for Newfoundland &amp; Labrador drivers.</p>
               </div>
             </div>
           </div>

@@ -21,12 +21,8 @@ const services = [
     description: 'Extend tire life with regular rotation'
   },
   {
-    title: 'Free Inspection',
-    description: 'Complimentary tire health check'
-  },
-  {
-    title: 'Free Tire Rotation',
-    description: 'Complimentary rotation after 6 months of purchase'
+    title: 'Free Brake Inspection',
+    description: 'Complimentary brake inspection during tire change'
   }
 ]
 
@@ -41,7 +37,7 @@ const advantages = [
   },
   {
     title: 'Fast Installation',
-    detail: 'Drive in, drive out in less than 60 minutes. No appointment required.'
+    detail: 'No appointment required.'
   },
   {
     title: 'Competitive Pricing',
@@ -49,7 +45,7 @@ const advantages = [
   },
   {
     title: 'Free Services',
-    detail: 'Complimentary tire inspection, air check & rotation after 6 months.'
+    detail: 'Complimentary brake inspection during tire change.'
   }
 ]
 

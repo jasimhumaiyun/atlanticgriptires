@@ -12,8 +12,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Services />
-      <Contact />
       <About />
+      <Contact />
       <Footer />
       <BackToTop />
     </>

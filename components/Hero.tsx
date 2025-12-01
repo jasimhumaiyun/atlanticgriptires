@@ -17,7 +17,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate min-h-screen flex items-center overflow-hidden pt-20"
+      className="relative isolate min-h-screen flex items-start overflow-hidden pt-24 sm:pt-28"
       style={{
         background: 'linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0.9) 20%, rgba(220, 38, 38, 0.2) 60%, rgba(220, 38, 38, 0.4) 100%)'
       }}
@@ -87,10 +87,10 @@ export default function Hero() {
                   <span className="text-[#DC2626]">ATLANTIC GRIP</span>{' '}
                   <span className="text-white">TIRES</span>
                 </h1>
-                {/* Badge */}
-                <span className="inline-flex badge-chip text-[0.7rem] text-white/80">
-                  Grip the journey ahead. Built on experience
-                </span>
+                {/* Tagline - Script Font */}
+                <p className="font-script text-2xl md:text-3xl lg:text-4xl text-white/90">
+                  Grip the journey ahead. Built on experience.
+                </p>
                 {/* Buttons */}
                 <div className="flex flex-row items-center gap-4">
                   <button
@@ -127,82 +127,46 @@ export default function Hero() {
                 <p className="text-white/70 text-xs sm:text-sm mb-4 text-left">For sedans, SUVs, light trucks & performance vehicles</p>
                 <div className="hidden sm:block space-y-2">
                   <div className="flex items-start gap-3">
-                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
-                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
-                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
-                    </svg>
-                    <div>
-                      <span className="text-white font-semibold text-sm">Wide Selection of Premium Brands</span>
-                      <span className="text-white/60 text-xs block mt-0.5">Top quality tires at competitive prices</span>
-                    </div>
+                    <span className="text-[#DC2626] text-lg leading-none">•</span>
+                    <span className="text-white font-semibold text-sm">No appointments required</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
-                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
-                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
-                    </svg>
-                    <div>
-                      <span className="text-white font-semibold text-sm">Direct Import Pricing</span>
-                      <span className="text-white/60 text-xs block mt-0.5">Serving individual & commercial clients</span>
-                    </div>
+                    <span className="text-[#DC2626] text-lg leading-none">•</span>
+                    <span className="text-white font-semibold text-sm">Quality tires at affordable rates through direct import advantage</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
-                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
-                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
-                    </svg>
-                    <div>
-                      <span className="text-white font-semibold text-sm">Free Brake Inspection</span>
-                      <span className="text-white/60 text-xs block mt-0.5">Free brake inspection during tire change</span>
-                    </div>
+                    <span className="text-[#DC2626] text-lg leading-none">•</span>
+                    <span className="text-white font-semibold text-sm">Wide selection of tires – premium brands for all vehicles</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
-                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
-                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
-                    </svg>
-                    <div>
-                      <span className="text-white font-semibold text-sm">No Appointment Required</span>
-                      <span className="text-white/60 text-xs block mt-0.5">Walk-ins welcome anytime</span>
-                    </div>
+                    <span className="text-[#DC2626] text-lg leading-none">•</span>
+                    <span className="text-white font-semibold text-sm">Free brake check during tire change</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-[#DC2626] text-lg leading-none">•</span>
+                    <span className="text-white font-semibold text-sm">AG Tires&apos; exclusive tire brands are available</span>
                   </div>
                 </div>
-                <div className="sm:hidden space-y-3">
+                <div className="sm:hidden space-y-2">
                   <div className="flex items-start gap-2">
-                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
-                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
-                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
-                    </svg>
-                    <span className="text-sm text-white/80">Wide Selection - Premium brands for all vehicles</span>
+                    <span className="text-[#DC2626] text-base leading-none">•</span>
+                    <span className="text-sm text-white/90">No appointments required</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
-                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
-                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
-                    </svg>
-                    <span className="text-sm text-white/80">Direct Import - Best value for all clients</span>
+                    <span className="text-[#DC2626] text-base leading-none">•</span>
+                    <span className="text-sm text-white/90">Quality tires at affordable rates</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
-                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
-                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
-                    </svg>
-                    <span className="text-sm text-white/80">Free Brake Inspection during tire change</span>
+                    <span className="text-[#DC2626] text-base leading-none">•</span>
+                    <span className="text-sm text-white/90">Wide selection – premium brands</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
-                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
-                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                      <path d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" stroke="currentColor" strokeWidth="1.5"/>
-                    </svg>
-                    <span className="text-sm text-white/80">No Appointment Required - Walk-ins welcome</span>
+                    <span className="text-[#DC2626] text-base leading-none">•</span>
+                    <span className="text-sm text-white/90">Free brake check during tire change</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#DC2626] text-base leading-none">•</span>
+                    <span className="text-sm text-white/90">AG Tires&apos; exclusive brands available</span>
                   </div>
                 </div>
               </div>
@@ -235,6 +199,18 @@ export default function Hero() {
                         A1N 5L3
                       </p>
                     </a>
+                  </div>
+                  <div>
+                    <h4 className="text-lg sm:text-xl font-bold text-white mb-2">Hours</h4>
+                    <div className="flex items-start gap-2">
+                      <svg className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" style={{ filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.8))' }} fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                      </svg>
+                      <p className="text-white/80 text-sm leading-relaxed">
+                        Mon – Sat: 8:00 AM – 6:00 PM<br />
+                        <span className="text-white/50">Sunday: Closed</span>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

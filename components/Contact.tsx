@@ -108,10 +108,8 @@ export default function Contact() {
   const inputErrorClass = `${inputBaseClass} border-2 border-red-500 focus:border-red-400`
 
   return (
-    <section id="contact" className="section-padding bg-gradient-dark relative overflow-hidden">
-      <div className="absolute inset-0 opacity-40" aria-hidden="true"
-        style={{ background: 'radial-gradient(circle at top left, rgba(220,38,38,0.32), transparent 55%)' }}
-      />
+    <section id="contact" className="section-padding relative">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(248,113,113,0.08),transparent_55%)]" aria-hidden="true" />
       <div className="container-custom relative">
         <div ref={ref} className="grid gap-12 lg:grid-cols-2 relative">
           <div className="hidden lg:block absolute inset-y-0 left-1/2 -translate-x-1/2" aria-hidden="true">
@@ -261,7 +259,7 @@ export default function Contact() {
                     <option value="Tire Installation">Tire Installation</option>
                     <option value="Seasonal Changeover">Seasonal Changeover</option>
                     <option value="Tire Rotation">Tire Rotation</option>
-                    <option value="Free Inspection">Free Inspection</option>
+                    <option value="Free Brake Inspection">Free Brake Inspection (with tire change only)</option>
                   </select>
                   {errors.service && (
                     <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
