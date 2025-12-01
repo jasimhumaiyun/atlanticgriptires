@@ -89,7 +89,7 @@ export default function Hero() {
                 </h1>
                 {/* Badge */}
                 <span className="inline-flex badge-chip text-[0.7rem] text-white/80">
-                  One-Stop Shop • Walk-Ins Welcome • No Appointment Required
+                  Grip the journey ahead. Built on experience
                 </span>
                 {/* Buttons */}
                 <div className="flex flex-row items-center gap-4">
