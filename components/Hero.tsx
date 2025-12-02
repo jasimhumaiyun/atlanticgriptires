@@ -17,7 +17,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate min-h-screen flex items-start overflow-hidden pt-24 sm:pt-28"
+      className="relative isolate min-h-screen flex items-start overflow-hidden pt-28 sm:pt-32"
       style={{
         background: 'linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0.9) 20%, rgba(220, 38, 38, 0.2) 60%, rgba(220, 38, 38, 0.4) 100%)'
       }}
